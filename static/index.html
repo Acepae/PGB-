@@ -819,14 +819,16 @@
       <div style="font-size:18px;font-weight:700;color:#111;letter-spacing:-0.5px;">📍 배달 주소 입력</div>
       <button onclick="closeAddressModal()" style="border:none;background:none;font-size:22px;color:#bbb;cursor:pointer;line-height:1;padding:4px;">✕</button>
     </div>
-    <div style="padding:8px 28px 0;font-size:13px;color:#aaa;font-weight:300;">배달받을 주소를 입력하면 주변 브랜드를 찾아드려요</div>
+    <div style="padding:8px 28px 0;font-size:13px;color:#aaa;font-weight:300;">주소를 직접 입력하거나 검색하세요</div>
     <div style="display:flex;gap:0;padding:20px 28px 0;">
       <button id="tabSearch" onclick="switchTab('search')" style="flex:1;padding:10px;font-size:13px;font-weight:500;border:1.5px solid #FF4F4F;border-right:none;border-radius:8px 0 0 8px;background:#FF4F4F;color:#fff;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">🔍 주소 검색</button>
       <button id="tabGps" onclick="switchTab('gps')" style="flex:1;padding:10px;font-size:13px;font-weight:500;border:1.5px solid #eee;border-left:none;border-radius:0 8px 8px 0;background:#fff;color:#888;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">📡 현재 위치</button>
     </div>
     <div id="panelSearch" style="padding:16px 28px;">
       <div style="display:flex;gap:8px;margin-bottom:12px;">
-        <input id="addrInput" type="text" placeholder="예: 12 Flaming Way, Willetton" onkeydown="if(event.key==='Enter')searchAddress()"
+        <input id="addrInput" type="text" placeholder="예: 12 Flaming Way, Willetton WA 6155" 
+          onkeydown="if(event.key==='Enter')searchAddress()"
+          oninput="onAddrType(this.value)"
           style="flex:1;border:1.5px solid #eee;border-radius:10px;padding:12px 16px;font-size:14px;font-family:'Noto Sans KR',sans-serif;outline:none;transition:border-color 0.2s;color:#111;"
           onfocus="this.style.borderColor='#FF4F4F'" onblur="this.style.borderColor='#eee'">
         <button onclick="searchAddress()" style="background:#FF4F4F;color:#fff;border:none;border-radius:10px;padding:12px 18px;font-size:13px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;white-space:nowrap;">검색</button>
@@ -1101,6 +1103,29 @@
     document.getElementById('tabGps').style.background = isSearch ? '#fff' : '#FF4F4F';
     document.getElementById('tabGps').style.color = isSearch ? '#888' : '#fff';
     document.getElementById('tabGps').style.borderColor = isSearch ? '#eee' : '#FF4F4F';
+  }
+
+  function onAddrType(val) {
+    const trimmed = val.trim();
+    if (trimmed.length > 3) {
+      setSelected(trimmed);
+      const filtered = SAMPLE_ADDRESSES.filter(a => a.toLowerCase().includes(trimmed.toLowerCase()));
+      const box = document.getElementById('addrResults');
+      if (filtered.length) {
+        box.style.display = 'block';
+        box.innerHTML = filtered.map(addr => `
+          <div onclick="selectAddr(\`${addr}\`)"
+            style="padding:13px 16px;font-size:13px;color:#222;border-bottom:1px solid #f7f7f7;cursor:pointer;display:flex;align-items:center;gap:8px;"
+            onmouseenter="this.style.background='#FFF0F0'" onmouseleave="this.style.background=''">
+            <span style="color:#FF4F4F;font-size:16px;">📍</span>${addr}
+          </div>`).join('');
+      } else {
+        box.style.display = 'none';
+      }
+    } else {
+      setSelected('');
+      document.getElementById('addrResults').style.display = 'none';
+    }
   }
 
   function searchAddress() {
