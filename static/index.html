@@ -826,7 +826,7 @@
     </div>
     <div id="panelSearch" style="padding:16px 28px;">
       <div style="display:flex;gap:8px;margin-bottom:12px;">
-        <input id="addrInput" type="text" placeholder="예: 부산시 해운대구 해운대로" onkeydown="if(event.key==='Enter')searchAddress()"
+        <input id="addrInput" type="text" placeholder="예: 12 Flaming Way, Willetton" onkeydown="if(event.key==='Enter')searchAddress()"
           style="flex:1;border:1.5px solid #eee;border-radius:10px;padding:12px 16px;font-size:14px;font-family:'Noto Sans KR',sans-serif;outline:none;transition:border-color 0.2s;color:#111;"
           onfocus="this.style.borderColor='#FF4F4F'" onblur="this.style.borderColor='#eee'">
         <button onclick="searchAddress()" style="background:#FF4F4F;color:#fff;border:none;border-radius:10px;padding:12px 18px;font-size:13px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;white-space:nowrap;">검색</button>
@@ -1049,16 +1049,26 @@
 
   /* ── 주소 모달 ── */
   const SAMPLE_ADDRESSES = [
-    '서울특별시 강남구 테헤란로 152',
-    '서울특별시 마포구 홍익로 6길 5',
-    '부산광역시 해운대구 해운대로 875',
-    '대구광역시 중구 동성로 2가 1',
-    '인천광역시 남동구 구월동 1136',
-    '광주광역시 서구 상무대로 916',
-    '대전광역시 유성구 엑스포로 107',
-    '울산광역시 남구 삼산로 261',
-    '수원시 영통구 광교중앙로 145',
-    '성남시 분당구 판교역로 166',
+    '12 Flaming Way, Willetton WA 6155',
+    '1 Barrack St, Perth WA 6000',
+    '100 St Georges Terrace, Perth WA 6000',
+    '25 Murray St, Perth WA 6000',
+    '180 Hay St, Subiaco WA 6008',
+    '45 Rokeby Rd, Subiaco WA 6008',
+    '32 Beaufort St, Northbridge WA 6003',
+    '88 Manning Rd, Bentley WA 6102',
+    '150 Karrinyup Rd, Karrinyup WA 6018',
+    '5 Riseley St, Applecross WA 6153',
+    '20 Canning Hwy, South Perth WA 6151',
+    '77 Stirling Hwy, Nedlands WA 6009',
+    '10 Claremont Cres, Claremont WA 6010',
+    '3 Forrest Rd, Cottesloe WA 6011',
+    '55 Scarborough Beach Rd, Scarborough WA 6019',
+    '8 Hillarys Dr, Hillarys WA 6025',
+    '200 Wanneroo Rd, Balga WA 6061',
+    '14 Walter Rd, Morley WA 6062',
+    '99 Great Eastern Hwy, Midland WA 6056',
+    '42 Armadale Rd, Jandakot WA 6164',
   ];
 
   let selectedAddr = '';
@@ -1094,21 +1104,27 @@
   }
 
   function searchAddress() {
-    const q = document.getElementById('addrInput').value.trim();
+    const q = document.getElementById('addrInput').value.trim().toLowerCase();
     if (!q) return;
-    const filtered = SAMPLE_ADDRESSES.filter(a => a.includes(q));
-    const results = filtered.length ? filtered : ['검색 결과가 없습니다. 직접 입력해 주세요.'];
+    const filtered = SAMPLE_ADDRESSES.filter(a => a.toLowerCase().includes(q));
+    const noResult = 'No results found. Please type your full address.';
+    const results = filtered.length ? filtered : [noResult];
     const box = document.getElementById('addrResults');
     box.style.display = 'block';
-    box.innerHTML = results.map((addr, i) => {
-      const isNoResult = addr.includes('없습니다');
+    box.innerHTML = results.map((addr) => {
+      const isNoResult = addr === noResult;
       return `<div onclick="${isNoResult ? '' : 'selectAddr(`' + addr + '`)'}"
         style="padding:13px 16px;font-size:13px;color:${isNoResult ? '#aaa' : '#222'};border-bottom:1px solid #f7f7f7;cursor:${isNoResult ? 'default' : 'pointer'};display:flex;align-items:center;gap:8px;transition:background 0.1s;"
         onmouseenter="if(!this.dataset.noResult)this.style.background='#FFF0F0'"
         onmouseleave="this.style.background=''" ${isNoResult ? 'data-no-result=1' : ''}>
         ${isNoResult ? '' : '<span style="color:#FF4F4F;font-size:16px;">📍</span>'}${addr}
       </div>`;
-    }).join('');
+    }).join('') +
+    (!filtered.length ? '' : `<div onclick="selectAddr(document.getElementById('addrInput').value.trim())"
+      style="padding:13px 16px;font-size:12px;color:#FF4F4F;border-top:1px solid #f0f0f0;cursor:pointer;display:flex;align-items:center;gap:8px;"
+      onmouseenter="this.style.background='#FFF0F0'" onmouseleave="this.style.background=''">
+      📝 직접 입력: "${document.getElementById('addrInput').value.trim()}"
+    </div>`);
   }
 
   function selectAddr(addr) {
