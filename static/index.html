@@ -208,7 +208,7 @@
       <span style="font-size:14px;color:#bbb;">🔍</span>
       <input type="text" placeholder="선물 검색">
     </div>
-    <div class="gnb-icon">🛒</div>
+    <div class="gnb-icon" onclick="openCartModal()" id="gnbCartIcon" style="position:relative;">🛒<span id="cartBadge" style="display:none;position:absolute;top:-4px;right:-4px;background:#FF4F4F;color:#fff;font-size:10px;font-weight:700;border-radius:50%;width:16px;height:16px;line-height:16px;text-align:center;">0</span></div>
     <div class="gnb-icon">👤</div>
     <button class="gnb-btn">선물 보내기</button>
   </div>
@@ -261,7 +261,7 @@
             <div class="p-name">EVENT 지당 카카오 케이크 (4인용)</div>
             <div class="p-price-row">
               <div><span class="p-discount">20%</span><span class="p-price">22,320원</span></div>
-              <button class="wish-btn">🛒</button>
+              <button class="wish-btn" onclick="addToMainCart(this,'파리바게뜨 카카오 케이크','22,320원')">🛒</button>
             </div>
             <div class="p-likes">♡ 48</div>
           </div>
@@ -273,7 +273,7 @@
             <div class="p-name">EVENT 파친카벨 지당 그릭 요거트 케이크</div>
             <div class="p-price-row">
               <div><span class="p-discount">20%</span><span class="p-price">21,200원</span></div>
-              <button class="wish-btn">🛒</button>
+              <button class="wish-btn" onclick="addToMainCart(this,'파친카벨 요거트 케이크','21,200원')">🛒</button>
             </div>
             <div class="p-likes">♡ 53</div>
           </div>
@@ -285,7 +285,7 @@
             <div class="p-name">EVENT 파친 한자 세트 파친 카벨 지당 유기농살 샌드위치</div>
             <div class="p-price-row">
               <div><span class="p-discount">20%</span><span class="p-price">9,040원</span></div>
-              <button class="wish-btn">🛒</button>
+              <button class="wish-btn" onclick="addToMainCart(this,'파리바게뜨 샌드위치 세트','9,040원')">🛒</button>
             </div>
             <div class="p-likes">♡ 44</div>
           </div>
@@ -324,7 +324,7 @@
             <div class="p-name">더 찾을수록 소주 1박스</div>
             <div class="p-price-row">
               <div><span class="p-price">A$180</span></div>
-              <button class="wish-btn">🛒</button>
+              <button class="wish-btn" onclick="addToMainCart(this,'더 찾을수록 소주 1박스','A$180')">🛒</button>
             </div>
             <div class="p-likes">♡ 2판+</div>
           </div>
@@ -338,7 +338,7 @@
             <div class="p-name">더 찾을수록 소주 6팩</div>
             <div class="p-price-row">
               <div><span class="p-price">A$70</span></div>
-              <button class="wish-btn">🛒</button>
+              <button class="wish-btn" onclick="addToMainCart(this,'더 찾을수록 소주 6팩','A$70')">🛒</button>
             </div>
             <div class="p-likes">♡ 2,085</div>
           </div>
@@ -352,7 +352,7 @@
             <div class="p-name">더 찾을수록 소주 1병</div>
             <div class="p-price-row">
               <div><span class="p-price">A$12</span></div>
-              <button class="wish-btn">🛒</button>
+              <button class="wish-btn" onclick="addToMainCart(this,'더 찾을수록 소주 1병','A$12')">🛒</button>
             </div>
             <div class="p-likes">♡ 68</div>
           </div>
@@ -390,7 +390,7 @@
             <div class="p-name">아이스 벚꽃 라떼 + 텀블러 세트</div>
             <div class="p-price-row">
               <div><span class="p-price">28,500원</span></div>
-              <button class="wish-btn">🛒</button>
+              <button class="wish-btn" onclick="addToMainCart(this,'스타벅스 벚꽃 라떼 세트','28,500원')">🛒</button>
             </div>
             <div class="p-likes">♡ 1,204</div>
           </div>
@@ -402,7 +402,7 @@
             <div class="p-name">봄 시즌 드링크 e쿠폰 3잔 세트</div>
             <div class="p-price-row">
               <div><span class="p-discount">10%</span><span class="p-price">16,200원</span></div>
-              <button class="wish-btn">🛒</button>
+              <button class="wish-btn" onclick="addToMainCart(this,'스타벅스 드링크 e쿠폰 3잔','16,200원')">🛒</button>
             </div>
             <div class="p-likes">♡ 892</div>
           </div>
@@ -414,7 +414,7 @@
             <div class="p-name">체리블라썸 MD 보틀 + 캐리어 패키지</div>
             <div class="p-price-row">
               <div><span class="p-price">52,000원</span></div>
-              <button class="wish-btn">🛒</button>
+              <button class="wish-btn" onclick="addToMainCart(this,'스타벅스 체리블라썸 패키지','52,000원')">🛒</button>
             </div>
             <div class="p-likes">♡ 3,017</div>
           </div>
@@ -452,7 +452,7 @@
             <div class="p-name">자음생 에센스 50ml 단품</div>
             <div class="p-price-row">
               <div><span class="p-price">150,000원</span></div>
-              <button class="wish-btn">🛒</button>
+              <button class="wish-btn" onclick="addToMainCart(this,'설화수 자음생 에센스 50ml','150,000원')">🛒</button>
             </div>
             <div class="p-likes">♡ 5,321</div>
           </div>
@@ -464,7 +464,7 @@
             <div class="p-name">윤조에센스 + 자음생크림 2종 세트</div>
             <div class="p-price-row">
               <div><span class="p-discount">15%</span><span class="p-price">204,000원</span></div>
-              <button class="wish-btn">🛒</button>
+              <button class="wish-btn" onclick="addToMainCart(this,'설화수 윤조에센스+자음생크림','204,000원')">🛒</button>
             </div>
             <div class="p-likes">♡ 2,899</div>
           </div>
@@ -476,7 +476,7 @@
             <div class="p-name">어버이날 스페셜 기프트 세트 (파우치 증정)</div>
             <div class="p-price-row">
               <div><span class="p-discount">10%</span><span class="p-price">270,000원</span></div>
-              <button class="wish-btn">🛒</button>
+              <button class="wish-btn" onclick="addToMainCart(this,'설화수 어버이날 기프트 세트','270,000원')">🛒</button>
             </div>
             <div class="p-likes">♡ 1,450</div>
           </div>
@@ -514,7 +514,7 @@
             <div class="p-name">아이스크림 케이크 레귤러 (로드 아이스크림)</div>
             <div class="p-price-row">
               <div><span class="p-price">35,900원</span></div>
-              <button class="wish-btn">🛒</button>
+              <button class="wish-btn" onclick="addToMainCart(this,'배스킨라빈스 레귤러 케이크','35,900원')">🛒</button>
             </div>
             <div class="p-likes">♡ 7,412</div>
           </div>
@@ -526,7 +526,7 @@
             <div class="p-name">아이스크림 케이크 라지 (피스타치오 체리)</div>
             <div class="p-price-row">
               <div><span class="p-price">47,900원</span></div>
-              <button class="wish-btn">🛒</button>
+              <button class="wish-btn" onclick="addToMainCart(this,'배스킨라빈스 라지 케이크','47,900원')">🛒</button>
             </div>
             <div class="p-likes">♡ 4,108</div>
           </div>
@@ -538,7 +538,7 @@
             <div class="p-name">파인트 3개 + 스푼 세트 선물 구성</div>
             <div class="p-price-row">
               <div><span class="p-discount">5%</span><span class="p-price">19,950원</span></div>
-              <button class="wish-btn">🛒</button>
+              <button class="wish-btn" onclick="addToMainCart(this,'배스킨라빈스 파인트 3개 세트','19,950원')">🛒</button>
             </div>
             <div class="p-likes">♡ 988</div>
           </div>
@@ -838,6 +838,25 @@
   </div>
 </div>
 
+<!-- ── 장바구니 모달 ── -->
+<div id="cartModal" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.5);align-items:flex-start;justify-content:center;padding-top:60px;">
+  <div style="background:#fff;border-radius:20px;width:100%;max-width:480px;margin:0 16px 40px;animation:modalIn 0.25s ease;">
+    <div style="padding:24px 28px 0;display:flex;justify-content:space-between;align-items:center;">
+      <div style="font-size:18px;font-weight:700;color:#111;">🛒 장바구니</div>
+      <button onclick="closeModal('cartModal')" style="border:none;background:none;font-size:22px;color:#bbb;cursor:pointer;">✕</button>
+    </div>
+    <div id="cartItemList" style="padding:16px 28px;max-height:320px;overflow-y:auto;"></div>
+    <div style="margin:0 28px;border-top:1px solid #eee;padding-top:12px;display:flex;justify-content:space-between;align-items:center;">
+      <span style="font-size:13px;color:#888;">총 <span id="cartTotalCount">0</span>개 상품</span>
+      <span style="font-size:16px;font-weight:700;color:#FF4F4F;" id="cartTotalPrice">0원</span>
+    </div>
+    <div style="padding:16px 28px 28px;display:flex;gap:8px;">
+      <button onclick="closeModal('cartModal')" style="flex:1;background:#f7f7f7;color:#555;border:none;border-radius:12px;padding:14px;font-size:14px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">계속 쇼핑</button>
+      <button onclick="closeModal('cartModal');openPayModal();" style="flex:2;background:#FF4F4F;color:#fff;border:none;border-radius:12px;padding:14px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">결제하기 →</button>
+    </div>
+  </div>
+</div>
+
 <!-- ── 주소 입력 모달 ── -->
 <div id="addressModal" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.5);align-items:center;justify-content:center;">
   <div style="background:#fff;border-radius:20px;width:100%;max-width:480px;margin:0 16px;overflow:hidden;animation:modalIn 0.25s ease;">
@@ -905,6 +924,76 @@
 </footer>
 
 <script>
+  /* ── 메인 장바구니 시스템 ── */
+  let mainCart = [];
+
+  function addToMainCart(btn, name, price) {
+    const existing = mainCart.find(i => i.name === name);
+    if (existing) {
+      existing.qty++;
+    } else {
+      mainCart.push({name, price, qty:1});
+    }
+    btn.textContent = '✓';
+    btn.style.color = '#FF4F4F';
+    btn.style.fontSize = '16px';
+    updateCartBadge();
+    showToast('🛒 장바구니에 담았습니다!');
+    setTimeout(() => { btn.textContent = '🛒'; btn.style.color = ''; btn.style.fontSize = ''; }, 1500);
+  }
+
+  function updateCartBadge() {
+    const total = mainCart.reduce((s,i) => s+i.qty, 0);
+    const badge = document.getElementById('cartBadge');
+    badge.textContent = total;
+    badge.style.display = total > 0 ? 'block' : 'none';
+  }
+
+  function openCartModal() {
+    const list = document.getElementById('cartItemList');
+    if (!mainCart.length) {
+      list.innerHTML = '<div style="text-align:center;padding:32px;color:#bbb;font-size:14px;">장바구니가 비어있어요<br><span style="font-size:32px;">🛒</span></div>';
+      document.getElementById('cartTotalCount').textContent = '0';
+      document.getElementById('cartTotalPrice').textContent = '0원';
+    } else {
+      list.innerHTML = mainCart.map((item,i) => `
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid #f5f5f5;">
+          <div style="flex:1;">
+            <div style="font-size:14px;font-weight:500;color:#111;">${item.name}</div>
+            <div style="font-size:13px;color:#FF4F4F;margin-top:2px;">${item.price}</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <button onclick="changeQty(${i},-1)" style="width:26px;height:26px;border-radius:50%;border:1px solid #eee;background:#fff;cursor:pointer;font-size:16px;line-height:1;">-</button>
+            <span style="font-size:14px;font-weight:500;min-width:20px;text-align:center;">${item.qty}</span>
+            <button onclick="changeQty(${i},1)" style="width:26px;height:26px;border-radius:50%;border:1px solid #eee;background:#fff;cursor:pointer;font-size:16px;line-height:1;">+</button>
+            <button onclick="removeCartItem(${i})" style="border:none;background:none;color:#ccc;cursor:pointer;font-size:18px;margin-left:4px;">✕</button>
+          </div>
+        </div>`).join('');
+      const total = mainCart.reduce((s,i) => s+i.qty, 0);
+      document.getElementById('cartTotalCount').textContent = total;
+      document.getElementById('cartTotalPrice').textContent = '합계 ' + total + '개';
+    }
+    document.getElementById('cartModal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function changeQty(idx, delta) {
+    mainCart[idx].qty += delta;
+    if (mainCart[idx].qty <= 0) mainCart.splice(idx, 1);
+    updateCartBadge();
+    openCartModal();
+  }
+
+  function removeCartItem(idx) {
+    mainCart.splice(idx, 1);
+    updateCartBadge();
+    openCartModal();
+  }
+
+  document.getElementById('cartModal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal('cartModal');
+  });
+
   /* ── 공통 모달 닫기 ── */
   function closeModal(id) {
     document.getElementById(id).style.display = 'none';
