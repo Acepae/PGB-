@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>선물하기</title>
+<title>PGB Gift</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -106,7 +106,7 @@
   .section-title { font-size: 18px; font-weight: 700; color: #111; letter-spacing: -0.5px; }
   .section-sub { font-size: 13px; color: #aaa; margin-top: 4px; font-weight: 300; }
 
-  /* 참고이미지 레이아웃: 왼쪽 큰 배너 + 오른쪽 상품 3개 */
+  /* 참고이미지 레이아웃: 왼쪽 큰 배너 + 오른쪽 상품 3 */
   .brand-layout {
     display: grid;
     grid-template-columns: 290px 1fr;
@@ -130,7 +130,7 @@
     font-weight: 500; color: #666; margin-top: 4px;
   }
 
-  /* 오른쪽 상품 3개 */
+  /* 오른쪽 상품 3 */
   .product-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 
   .product-card {
@@ -200,68 +200,68 @@
 
 <!-- ── GNB ── -->
 <header class="gnb">
-  <div class="gnb-logo">선물<span>하기</span></div>
+  <div class="gnb-logo">PGB<span>Gift</span></div>
   <ul class="gnb-menu">
   </ul>
   <div class="gnb-right">
     <div class="gnb-search">
       <span style="font-size:14px;color:#bbb;">🔍</span>
-      <input type="text" placeholder="선물 검색">
+      <input type="text" placeholder="Search gifts...">
     </div>
     <div class="gnb-icon" onclick="openCartModal()" id="gnbCartIcon" style="position:relative;">🛒<span id="cartBadge" style="display:none;position:absolute;top:-4px;right:-4px;background:#FF4F4F;color:#fff;font-size:10px;font-weight:700;border-radius:50%;width:16px;height:16px;line-height:16px;text-align:center;">0</span></div>
     <div class="gnb-icon">👤</div>
-    <button class="gnb-btn">선물 보내기</button>
+    <button class="gnb-btn">Send Gift</button>
   </div>
 </header>
 
-<!-- ── 카테고리 탭 ── -->
+<!-- CATEGORY TABS -->
 <div class="cat-wrap">
-  <div class="cat-tab">전체</div>
-  <div class="cat-tab active">식품·음료</div>
-  <div class="cat-tab">뷰티·케어</div>
-  <div class="cat-tab">패션·잡화</div>
-  <div class="cat-tab">생활·인테리어</div>
-  <div class="cat-tab">건강</div>
-  <div class="cat-tab">⛳ 골프</div>
+  <div class="cat-tab">All</div>
+  <div class="cat-tab active">Food & Drink</div>
+  <div class="cat-tab">Beauty</div>
+  <div class="cat-tab">Fashion</div>
+  <div class="cat-tab">Living</div>
+  <div class="cat-tab">Health</div>
+  <div class="cat-tab">⛳ Golf</div>
 </div>
 
-<!-- ── 상황 칩 ── -->
+<!-- OCCASION CHIPS -->
 <div class="occ-bar">
-  <div class="occ-chip active">🎂 생일</div>
-  <div class="occ-chip">💍 결혼</div>
-  <div class="occ-chip">🎓 졸업·입학</div>
+  <div class="occ-chip active">🎂 Birthday</div>
+  <div class="occ-chip">💍 Wedding</div>
+  <div class="occ-chip">🎓 Graduation</div>
 </div>
 
-<!-- ── MAIN ── -->
+<!-- MAIN -->
 <main class="main">
 
-  <!-- ══ 섹션 1: 파리바게뜨 ══ -->
+  <!-- SECTION 1: Paris Baguette -->
   <div class="brand-section">
     <div class="section-head">
-      <div class="section-title">파리바게뜨 20% 혜택 🎂</div>
-      <div class="section-sub">마음은 가볍게, 달콤함은 그대로 즐기는 지당 케이크</div>
+      <div class="section-title">Paris Baguette 20% Off 🎂</div>
+      <div class="section-sub">Light on the wallet, sweet on the taste</div>
     </div>
     <div class="brand-layout">
-      <!-- 왼쪽 큰 배너 -->
+      <!-- HERO BANNER -->
       <div class="brand-hero">
         <div class="brand-hero-img bg-pink">
           🎂
-          <span class="hero-label">파리바게뜨 케이크</span>
+          <span class="hero-label">Paris Baguette Cake</span>
         </div>
         <div class="badge-wrap">
           <span class="badge badge-event">EVENT</span>
         </div>
       </div>
-      <!-- 오른쪽 상품 3개 -->
+      <!-- PRODUCT ROW -->
       <div class="product-row">
         <div class="product-card">
           <div class="product-thumb bg-pink">🍰</div>
           <div class="product-info">
-            <div class="p-brand">파리바게뜨</div>
-            <div class="p-name">EVENT 지당 카카오 케이크 (4인용)</div>
+            <div class="p-brand">Paris Baguette</div>
+            <div class="p-name">EVENT Kakao Cake (Serves 4)</div>
             <div class="p-price-row">
-              <div><span class="p-discount">20%</span><span class="p-price">22,320원</span></div>
-              <button class="wish-btn" onclick="addToMainCart(this,'파리바게뜨 카카오 케이크','22,320원')">🛒</button>
+              <div><span class="p-discount">20%</span><span class="p-price">A$22.32</span></div>
+              <button class="wish-btn" onclick="addToMainCart(this,'Paris Baguette Kakao Cake','A$22.32')">🛒</button>
             </div>
             <div class="p-likes">♡ 48</div>
           </div>
@@ -269,11 +269,11 @@
         <div class="product-card">
           <div class="product-thumb bg-cream">🎂</div>
           <div class="product-info">
-            <div class="p-brand">파리바게뜨</div>
-            <div class="p-name">EVENT 파친카벨 지당 그릭 요거트 케이크</div>
+            <div class="p-brand">Paris Baguette</div>
+            <div class="p-name">EVENT Greek Yogurt Cake</div>
             <div class="p-price-row">
-              <div><span class="p-discount">20%</span><span class="p-price">21,200원</span></div>
-              <button class="wish-btn" onclick="addToMainCart(this,'파친카벨 요거트 케이크','21,200원')">🛒</button>
+              <div><span class="p-discount">20%</span><span class="p-price">A$21.20</span></div>
+              <button class="wish-btn" onclick="addToMainCart(this,'Greek Yogurt Cake','A$21.20')">🛒</button>
             </div>
             <div class="p-likes">♡ 53</div>
           </div>
@@ -281,11 +281,11 @@
         <div class="product-card">
           <div class="product-thumb bg-peach">🥪</div>
           <div class="product-info">
-            <div class="p-brand">파리바게뜨</div>
-            <div class="p-name">EVENT 파친 한자 세트 파친 카벨 지당 유기농살 샌드위치</div>
+            <div class="p-brand">Paris Baguette</div>
+            <div class="p-name">EVENT Organic Sandwich Set</div>
             <div class="p-price-row">
-              <div><span class="p-discount">20%</span><span class="p-price">9,040원</span></div>
-              <button class="wish-btn" onclick="addToMainCart(this,'파리바게뜨 샌드위치 세트','9,040원')">🛒</button>
+              <div><span class="p-discount">20%</span><span class="p-price">A$9.04</span></div>
+              <button class="wish-btn" onclick="addToMainCart(this,'Paris Baguette Sandwich Set','A$9.04')">🛒</button>
             </div>
             <div class="p-likes">♡ 44</div>
           </div>
@@ -293,22 +293,22 @@
       </div>
     </div>
     <div class="see-more-wrap">
-      <button class="see-more" onclick="alert('파리바게뜨 상세 페이지로 이동합니다.')">자세히 보기 ›</button>
+      <button class="see-more" onclick="alert('Going to Paris Baguette page')">View More ›</button>
     </div>
   </div>
 
   <div class="divider"></div>
 
-  <!-- ══ 섹션 2: 더 찾을수록 소주 ══ -->
+  <!-- SECTION 2: Chateau Soorok Soju -->
   <div class="brand-section">
     <div class="section-head">
-      <div class="section-title">더 찾을수록 소주 🍶</div>
-      <div class="section-sub">봄과 같은 민경과 함께 오프아워 SS 파자마를 만나보세요</div>
+      <div class="section-title">Chateau Soorok Soju 🍶</div>
+      <div class="section-sub">Premium Korean soju — Apple, Strawberry, Moscato & Americano</div>
     </div>
     <div class="brand-layout">
       <div class="brand-hero">
         <div class="brand-hero-img" style="background:#f0f0f0;padding:0;overflow:hidden;">
-          <img src="soju.png" alt="소주 이미지" style="width:100%;height:100%;object-fit:cover;">
+          <img src="soju.png" alt="Soju" style="width:100%;height:100%;object-fit:cover;">
         </div>
         <div class="badge-wrap">
           <span class="badge badge-new">NEW</span>
@@ -317,42 +317,42 @@
       <div class="product-row">
         <div class="product-card">
           <div class="product-thumb" style="background:#f5f5f5;padding:0;overflow:hidden;">
-            <img src="soju_box.png" alt="1박스" style="width:100%;height:100%;object-fit:cover;">
+            <img src="soju_box.png" alt="1 Box" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="product-info">
-            <div class="p-brand">더 찾을수록</div>
-            <div class="p-name">더 찾을수록 소주 1박스</div>
+            <div class="p-brand">Chateau Soorok</div>
+            <div class="p-name">Chateau Soorok Soju 1 Box</div>
             <div class="p-price-row">
               <div><span class="p-price">A$180</span></div>
-              <button class="wish-btn" onclick="addToMainCart(this,'더 찾을수록 소주 1박스','A$180')">🛒</button>
+              <button class="wish-btn" onclick="addToMainCart(this,'Chateau Soorok Soju 1 Box','A$180')">🛒</button>
             </div>
-            <div class="p-likes">♡ 2판+</div>
+            <div class="p-likes">♡ 2k+</div>
           </div>
         </div>
         <div class="product-card">
           <div class="product-thumb" style="background:#f5f5f5;padding:0;overflow:hidden;">
-            <img src="soju_6pack.png" alt="6팩" style="width:100%;height:100%;object-fit:cover;">
+            <img src="soju_6pack.png" alt="6 Pack" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="product-info">
-            <div class="p-brand">더 찾을수록</div>
-            <div class="p-name">더 찾을수록 소주 6팩</div>
+            <div class="p-brand">Chateau Soorok</div>
+            <div class="p-name">Chateau Soorok Soju 6 Pack</div>
             <div class="p-price-row">
               <div><span class="p-price">A$70</span></div>
-              <button class="wish-btn" onclick="addToMainCart(this,'더 찾을수록 소주 6팩','A$70')">🛒</button>
+              <button class="wish-btn" onclick="addToMainCart(this,'Chateau Soorok Soju 6 Pack','A$70')">🛒</button>
             </div>
             <div class="p-likes">♡ 2,085</div>
           </div>
         </div>
         <div class="product-card">
           <div class="product-thumb" style="background:#f5f5f5;padding:0;overflow:hidden;">
-            <img src="soju_bottle.png" alt="1병" style="width:100%;height:100%;object-fit:cover;">
+            <img src="soju_bottle.png" alt="1 Bottle" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="product-info">
-            <div class="p-brand">더 찾을수록</div>
-            <div class="p-name">더 찾을수록 소주 1병</div>
+            <div class="p-brand">Chateau Soorok</div>
+            <div class="p-name">Chateau Soorok Soju 1 Bottle</div>
             <div class="p-price-row">
               <div><span class="p-price">A$12</span></div>
-              <button class="wish-btn" onclick="addToMainCart(this,'더 찾을수록 소주 1병','A$12')">🛒</button>
+              <button class="wish-btn" onclick="addToMainCart(this,'Chateau Soorok Soju 1 Bottle','A$12')">🛒</button>
             </div>
             <div class="p-likes">♡ 68</div>
           </div>
@@ -360,17 +360,17 @@
       </div>
     </div>
     <div class="see-more-wrap">
-      <button class="see-more" onclick="alert('더 찾을수록 소주 상세 페이지로 이동합니다.')">자세히 보기 ›</button>
+      <button class="see-more" onclick="alert('Going to Chateau Soorok page')">View More ›</button>
     </div>
   </div>
 
   <div class="divider"></div>
 
-  <!-- ══ 섹션 3: 스타벅스 ══ -->
+  <!-- SECTION 3: Starbucks -->
   <div class="brand-section">
     <div class="section-head">
-      <div class="section-title">스타벅스 봄 시즌 한정 ☕</div>
-      <div class="section-sub">봄맞이 신메뉴 & 한정 MD 굿즈 특별 구성</div>
+      <div class="section-title">Starbucks Spring Limited ☕</div>
+      <div class="section-sub">New season drinks & limited MD merchandise</div>
     </div>
     <div class="brand-layout">
       <div class="brand-hero">
@@ -379,18 +379,18 @@
           <span class="hero-label">SPRING 2025</span>
         </div>
         <div class="badge-wrap">
-          <span class="badge badge-hot">한정</span>
+          <span class="badge badge-hot">LIMITED</span>
         </div>
       </div>
       <div class="product-row">
         <div class="product-card">
           <div class="product-thumb bg-cream">🧋</div>
           <div class="product-info">
-            <div class="p-brand">스타벅스</div>
-            <div class="p-name">아이스 벚꽃 라떼 + 텀블러 세트</div>
+            <div class="p-brand">Starbucks</div>
+            <div class="p-name">Cherry Blossom Latte + Tumbler Set</div>
             <div class="p-price-row">
-              <div><span class="p-price">28,500원</span></div>
-              <button class="wish-btn" onclick="addToMainCart(this,'스타벅스 벚꽃 라떼 세트','28,500원')">🛒</button>
+              <div><span class="p-price">A$28.50</span></div>
+              <button class="wish-btn" onclick="addToMainCart(this,'Starbucks Cherry Blossom Latte Set','A$28.50')">🛒</button>
             </div>
             <div class="p-likes">♡ 1,204</div>
           </div>
@@ -398,11 +398,11 @@
         <div class="product-card">
           <div class="product-thumb bg-sky">🍵</div>
           <div class="product-info">
-            <div class="p-brand">스타벅스</div>
-            <div class="p-name">봄 시즌 드링크 e쿠폰 3잔 세트</div>
+            <div class="p-brand">Starbucks</div>
+            <div class="p-name">Spring Drink e-Coupon 3 Pack</div>
             <div class="p-price-row">
-              <div><span class="p-discount">10%</span><span class="p-price">16,200원</span></div>
-              <button class="wish-btn" onclick="addToMainCart(this,'스타벅스 드링크 e쿠폰 3잔','16,200원')">🛒</button>
+              <div><span class="p-discount">10%</span><span class="p-price">A$16.20</span></div>
+              <button class="wish-btn" onclick="addToMainCart(this,'Starbucks Drink e-Coupon 3 Pack','A$16.20')">🛒</button>
             </div>
             <div class="p-likes">♡ 892</div>
           </div>
@@ -410,11 +410,11 @@
         <div class="product-card">
           <div class="product-thumb bg-lavender">🌸</div>
           <div class="product-info">
-            <div class="p-brand">스타벅스</div>
-            <div class="p-name">체리블라썸 MD 보틀 + 캐리어 패키지</div>
+            <div class="p-brand">Starbucks</div>
+            <div class="p-name">Cherry Blossom Bottle + Carrier Package</div>
             <div class="p-price-row">
-              <div><span class="p-price">52,000원</span></div>
-              <button class="wish-btn" onclick="addToMainCart(this,'스타벅스 체리블라썸 패키지','52,000원')">🛒</button>
+              <div><span class="p-price">A$52.00</span></div>
+              <button class="wish-btn" onclick="addToMainCart(this,'Starbucks Cherry Blossom Package','A$52.00')">🛒</button>
             </div>
             <div class="p-likes">♡ 3,017</div>
           </div>
@@ -422,37 +422,37 @@
       </div>
     </div>
     <div class="see-more-wrap">
-      <button class="see-more" onclick="alert('스타벅스 상세 페이지로 이동합니다.')">자세히 보기 ›</button>
+      <button class="see-more" onclick="alert('Going to Starbucks page')">View More ›</button>
     </div>
   </div>
 
   <div class="divider"></div>
 
-  <!-- ══ 섹션 4: 설화수 ══ -->
+  <!-- SECTION 4: Sulwhasoo -->
   <div class="brand-section">
     <div class="section-head">
-      <div class="section-title">설화수 어머니께 드리는 선물 💐</div>
-      <div class="section-sub">어버이날 한 달 전 미리 준비하는 명품 한방 화장품</div>
+      <div class="section-title">Sulwhasoo Mother's Gift 💐</div>
+      <div class="section-sub">Premium Korean skincare — perfect for Mother's Day</div>
     </div>
     <div class="brand-layout">
       <div class="brand-hero">
         <div class="brand-hero-img bg-sand">
           🌺
-          <span class="hero-label">설화수 어버이날 기획</span>
+          <span class="hero-label">Sulwhasoo Mother's Day</span>
         </div>
         <div class="badge-wrap">
-          <span class="badge badge-sale">기획전</span>
+          <span class="badge badge-sale">SPECIAL</span>
         </div>
       </div>
       <div class="product-row">
         <div class="product-card">
           <div class="product-thumb bg-sand">🧴</div>
           <div class="product-info">
-            <div class="p-brand">설화수</div>
-            <div class="p-name">자음생 에센스 50ml 단품</div>
+            <div class="p-brand">Sulwhasoo</div>
+            <div class="p-name">Jaeum-saeng Essence 50ml</div>
             <div class="p-price-row">
-              <div><span class="p-price">150,000원</span></div>
-              <button class="wish-btn" onclick="addToMainCart(this,'설화수 자음생 에센스 50ml','150,000원')">🛒</button>
+              <div><span class="p-price">A$150.00</span></div>
+              <button class="wish-btn" onclick="addToMainCart(this,'Sulwhasoo Essence 50ml','A$150.00')">🛒</button>
             </div>
             <div class="p-likes">♡ 5,321</div>
           </div>
@@ -460,11 +460,11 @@
         <div class="product-card">
           <div class="product-thumb bg-rose">💆</div>
           <div class="product-info">
-            <div class="p-brand">설화수</div>
-            <div class="p-name">윤조에센스 + 자음생크림 2종 세트</div>
+            <div class="p-brand">Sulwhasoo</div>
+            <div class="p-name">Yunjosaeng Essence + Cream Set</div>
             <div class="p-price-row">
-              <div><span class="p-discount">15%</span><span class="p-price">204,000원</span></div>
-              <button class="wish-btn" onclick="addToMainCart(this,'설화수 윤조에센스+자음생크림','204,000원')">🛒</button>
+              <div><span class="p-discount">15%</span><span class="p-price">A$204.00</span></div>
+              <button class="wish-btn" onclick="addToMainCart(this,'Sulwhasoo Essence + Cream','A$204.00')">🛒</button>
             </div>
             <div class="p-likes">♡ 2,899</div>
           </div>
@@ -472,11 +472,11 @@
         <div class="product-card">
           <div class="product-thumb bg-yellow">🎁</div>
           <div class="product-info">
-            <div class="p-brand">설화수</div>
-            <div class="p-name">어버이날 스페셜 기프트 세트 (파우치 증정)</div>
+            <div class="p-brand">Sulwhasoo</div>
+            <div class="p-name">Parent's Day Special Gift Set (+ Pouch)</div>
             <div class="p-price-row">
-              <div><span class="p-discount">10%</span><span class="p-price">270,000원</span></div>
-              <button class="wish-btn" onclick="addToMainCart(this,'설화수 어버이날 기프트 세트','270,000원')">🛒</button>
+              <div><span class="p-discount">10%</span><span class="p-price">A$270.00</span></div>
+              <button class="wish-btn" onclick="addToMainCart(this,'Sulwhasoo Mother's Day Gift Set','A$270.00')">🛒</button>
             </div>
             <div class="p-likes">♡ 1,450</div>
           </div>
@@ -484,23 +484,23 @@
       </div>
     </div>
     <div class="see-more-wrap">
-      <button class="see-more" onclick="alert('설화수 상세 페이지로 이동합니다.')">자세히 보기 ›</button>
+      <button class="see-more" onclick="alert('Going to Sulwhasoo page')">View More ›</button>
     </div>
   </div>
 
   <div class="divider"></div>
 
-  <!-- ══ 섹션 5: 배스킨라빈스 ══ -->
+  <!-- SECTION 5: Baskin Robbins -->
   <div class="brand-section">
     <div class="section-head">
-      <div class="section-title">배스킨라빈스 아이스크림 케이크 🍦</div>
-      <div class="section-sub">생일·기념일을 달콤하게 특별하게 만들어 드려요</div>
+      <div class="section-title">Baskin Robbins Ice Cream Cake 🍦</div>
+      <div class="section-sub">Make birthdays & anniversaries extra special</div>
     </div>
     <div class="brand-layout">
       <div class="brand-hero">
         <div class="brand-hero-img bg-sky">
           🍦
-          <span class="hero-label">배스킨라빈스 케이크</span>
+          <span class="hero-label">Baskin Robbins Cake</span>
         </div>
         <div class="badge-wrap">
           <span class="badge badge-event">BEST</span>
@@ -510,11 +510,11 @@
         <div class="product-card">
           <div class="product-thumb bg-sky">🎂</div>
           <div class="product-info">
-            <div class="p-brand">배스킨라빈스</div>
-            <div class="p-name">아이스크림 케이크 레귤러 (로드 아이스크림)</div>
+            <div class="p-brand">Baskin Robbins</div>
+            <div class="p-name">Ice Cream Cake Regular</div>
             <div class="p-price-row">
-              <div><span class="p-price">35,900원</span></div>
-              <button class="wish-btn" onclick="addToMainCart(this,'배스킨라빈스 레귤러 케이크','35,900원')">🛒</button>
+              <div><span class="p-price">A$35.90</span></div>
+              <button class="wish-btn" onclick="addToMainCart(this,'Baskin Robbins Regular Cake','A$35.90')">🛒</button>
             </div>
             <div class="p-likes">♡ 7,412</div>
           </div>
@@ -522,11 +522,11 @@
         <div class="product-card">
           <div class="product-thumb bg-pink">🍰</div>
           <div class="product-info">
-            <div class="p-brand">배스킨라빈스</div>
-            <div class="p-name">아이스크림 케이크 라지 (피스타치오 체리)</div>
+            <div class="p-brand">Baskin Robbins</div>
+            <div class="p-name">Ice Cream Cake Large (Pistachio Cherry)</div>
             <div class="p-price-row">
-              <div><span class="p-price">47,900원</span></div>
-              <button class="wish-btn" onclick="addToMainCart(this,'배스킨라빈스 라지 케이크','47,900원')">🛒</button>
+              <div><span class="p-price">A$47.90</span></div>
+              <button class="wish-btn" onclick="addToMainCart(this,'Baskin Robbins Large Cake','A$47.90')">🛒</button>
             </div>
             <div class="p-likes">♡ 4,108</div>
           </div>
@@ -534,11 +534,11 @@
         <div class="product-card">
           <div class="product-thumb bg-cream">🍧</div>
           <div class="product-info">
-            <div class="p-brand">배스킨라빈스</div>
-            <div class="p-name">파인트 3개 + 스푼 세트 선물 구성</div>
+            <div class="p-brand">Baskin Robbins</div>
+            <div class="p-name">Pint 3 Pack + Spoon Gift Set</div>
             <div class="p-price-row">
-              <div><span class="p-discount">5%</span><span class="p-price">19,950원</span></div>
-              <button class="wish-btn" onclick="addToMainCart(this,'배스킨라빈스 파인트 3개 세트','19,950원')">🛒</button>
+              <div><span class="p-discount">5%</span><span class="p-price">A$19.95</span></div>
+              <button class="wish-btn" onclick="addToMainCart(this,'Baskin Robbins 3 Pint Set','A$19.95')">🛒</button>
             </div>
             <div class="p-likes">♡ 988</div>
           </div>
@@ -546,19 +546,19 @@
       </div>
     </div>
     <div class="see-more-wrap">
-      <button class="see-more" onclick="alert('배스킨라빈스 상세 페이지로 이동합니다.')">자세히 보기 ›</button>
+      <button class="see-more" onclick="alert('Going to Baskin Robbins page')">View More ›</button>
     </div>
   </div>
 
 </main>
 
-<!-- ── 이용 방법 섹션 ── -->
+<!-- HOW IT WORKS SECTION -->
 <section style="background:#fff;padding:56px 32px;border-top:1px solid #eee;">
   <div style="max-width:1060px;margin:0 auto;">
     <div style="text-align:center;margin-bottom:40px;">
       <div style="font-size:13px;font-weight:500;color:#FF4F4F;letter-spacing:2px;margin-bottom:10px;">HOW IT WORKS</div>
-      <div style="font-size:22px;font-weight:700;color:#111;letter-spacing:-0.5px;">이용 방법</div>
-      <div style="font-size:14px;color:#aaa;margin-top:8px;font-weight:300;">간단한 4단계로 소중한 사람에게 선물을 보내보세요</div>
+      <div style="font-size:22px;font-weight:700;color:#111;letter-spacing:-0.5px;">How It Works</div>
+      <div style="font-size:14px;color:#aaa;margin-top:8px;font-weight:300;">Send a gift to someone special in 4 simple steps</div>
     </div>
 
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
@@ -573,8 +573,8 @@
             <circle cx="26" cy="23" r="3.5" fill="#FF4F4F"/>
           </svg>
         </div>
-        <div style="font-size:16px;font-weight:700;color:#111;margin-bottom:10px;letter-spacing:-0.3px;">주소 입력</div>
-        <div style="font-size:13px;color:#999;line-height:1.7;font-weight:300;">배달받을 주소를 입력하고<br>주변 음식점을 확인하세요.</div>
+        <div style="font-size:16px;font-weight:700;color:#111;margin-bottom:10px;letter-spacing:-0.3px;">Enter Address</div>
+        <div style="font-size:13px;color:#999;line-height:1.7;font-weight:300;">Enter your delivery address<br>and browse nearby brands.</div>
       </div>
 
       <!-- STEP 2 -->
@@ -591,8 +591,8 @@
             <path d="M18 34 L34 34" stroke="#9B7FE8" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
         </div>
-        <div style="font-size:16px;font-weight:700;color:#111;margin-bottom:10px;letter-spacing:-0.3px;">메뉴 선택</div>
-        <div style="font-size:13px;color:#999;line-height:1.7;font-weight:300;">먹고 싶은 음식을 골라<br>장바구니에 담으세요.</div>
+        <div style="font-size:16px;font-weight:700;color:#111;margin-bottom:10px;letter-spacing:-0.3px;">Select Items</div>
+        <div style="font-size:13px;color:#999;line-height:1.7;font-weight:300;">Choose your gifts and<br>add them to your cart.</div>
       </div>
 
       <!-- STEP 3 -->
@@ -607,8 +607,8 @@
             <rect x="25" y="30" width="4" height="2" rx="1" fill="#fff" opacity="0.7"/>
           </svg>
         </div>
-        <div style="font-size:16px;font-weight:700;color:#111;margin-bottom:10px;letter-spacing:-0.3px;">간편 결제</div>
-        <div style="font-size:13px;color:#999;line-height:1.7;font-weight:300;">카드, 카카오페이, 네이버페이로<br>빠르게 결제하세요.</div>
+        <div style="font-size:16px;font-weight:700;color:#111;margin-bottom:10px;letter-spacing:-0.3px;">Easy Payment</div>
+        <div style="font-size:13px;color:#999;line-height:1.7;font-weight:300;">Pay quickly via<br>card or bank transfer.</div>
       </div>
 
       <!-- STEP 4 -->
@@ -625,13 +625,13 @@
             <path d="M24 14 Q26 11 28 14" stroke="#E06010" stroke-width="1.2" fill="none" stroke-linecap="round"/>
           </svg>
         </div>
-        <div style="font-size:16px;font-weight:700;color:#111;margin-bottom:10px;letter-spacing:-0.3px;">배달 추적</div>
-        <div style="font-size:13px;color:#999;line-height:1.7;font-weight:300;">실시간으로 배달 현황을<br>지도에서 확인하세요.</div>
+        <div style="font-size:16px;font-weight:700;color:#111;margin-bottom:10px;letter-spacing:-0.3px;">Delivery Tracking</div>
+        <div style="font-size:13px;color:#999;line-height:1.7;font-weight:300;">Track your delivery<br>in real time on the map.</div>
       </div>
 
     </div>
 
-    <!-- 연결 화살표 (데스크탑용 오버레이 느낌) -->
+    <!-- CONNECTOR DOTS -->
     <div style="display:flex;justify-content:center;gap:0;margin-top:28px;align-items:center;">
       <div style="width:8px;height:8px;border-radius:50%;background:#FF4F4F;opacity:0.3;"></div>
       <div style="width:60px;height:1px;background:linear-gradient(to right,#FF4F4F,#FFB3B3);opacity:0.3;"></div>
@@ -645,86 +645,86 @@
   </div>
 </section>
 
-<!-- ── 메뉴 선택 모달 ── -->
+<!-- MENU MODAL -->
 <div id="menuModal" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.5);align-items:flex-start;justify-content:center;padding-top:40px;overflow-y:auto;">
   <div style="background:#fff;border-radius:20px;width:100%;max-width:600px;margin:0 16px 40px;animation:modalIn 0.25s ease;">
     <div style="padding:24px 28px 0;display:flex;justify-content:space-between;align-items:center;">
-      <div style="font-size:18px;font-weight:700;color:#111;">🛍️ 선물 메뉴 선택</div>
+      <div style="font-size:18px;font-weight:700;color:#111;">🛍️ Select Gift Items</div>
       <button onclick="closeModal('menuModal')" style="border:none;background:none;font-size:22px;color:#bbb;cursor:pointer;">✕</button>
     </div>
-    <!-- 카테고리 탭 -->
+    <!-- CATEGORY TABS -->
     <div style="display:flex;gap:8px;padding:16px 28px;overflow-x:auto;scrollbar-width:none;">
-      <button class="menu-cat active" onclick="filterMenu(this,'전체')" style="flex-shrink:0;padding:7px 16px;border-radius:20px;border:1.5px solid #FF4F4F;background:#FF4F4F;color:#fff;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">전체</button>
-      <button class="menu-cat" onclick="filterMenu(this,'케이크')" style="flex-shrink:0;padding:7px 16px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">🎂 케이크</button>
-      <button class="menu-cat" onclick="filterMenu(this,'뷰티')" style="flex-shrink:0;padding:7px 16px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">💄 뷰티</button>
-      <button class="menu-cat" onclick="filterMenu(this,'패션')" style="flex-shrink:0;padding:7px 16px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">👗 패션</button>
-      <button class="menu-cat" onclick="filterMenu(this,'소주')" style="flex-shrink:0;padding:7px 16px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">🍶 소주</button>
-      <button class="menu-cat" onclick="filterMenu(this,'건강')" style="flex-shrink:0;padding:7px 16px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">💊 건강</button>
+      <button class="menu-cat active" onclick="filterMenu(this,'All')" style="flex-shrink:0;padding:7px 16px;border-radius:20px;border:1.5px solid #FF4F4F;background:#FF4F4F;color:#fff;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">All</button>
+      <button class="menu-cat" onclick="filterMenu(this,'Cake')" style="flex-shrink:0;padding:7px 16px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">🎂 Cake</button>
+      <button class="menu-cat" onclick="filterMenu(this,'Beauty')" style="flex-shrink:0;padding:7px 16px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">💄 Beauty</button>
+      <button class="menu-cat" onclick="filterMenu(this,'Fashion')" style="flex-shrink:0;padding:7px 16px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">👗 Fashion</button>
+      <button class="menu-cat" onclick="filterMenu(this,'Soju')" style="flex-shrink:0;padding:7px 16px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">🍶 Soju</button>
+      <button class="menu-cat" onclick="filterMenu(this,'Health')" style="flex-shrink:0;padding:7px 16px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">💊 Health</button>
     </div>
-    <!-- 소주 배지 선택 (소주 카테고리 선택시 표시) -->
+    <!-- SOJU BADGE SELECTOR -->
     <div id="sojuBadgeBar" style="display:none;padding:0 28px 12px;display:none;gap:8px;flex-wrap:wrap;">
-      <div style="font-size:12px;color:#888;font-weight:500;width:100%;margin-bottom:4px;">🍶 종류 선택</div>
-      <button class="soju-badge active-badge" onclick="selectSojuBadge(this,'전체')" style="padding:6px 14px;border-radius:20px;border:1.5px solid #FF4F4F;background:#FF4F4F;color:#fff;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">전체</button>
-      <button class="soju-badge" onclick="selectSojuBadge(this,'1박스')" style="padding:6px 14px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">📦 1박스</button>
-      <button class="soju-badge" onclick="selectSojuBadge(this,'6팩')" style="padding:6px 14px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">🧃 6팩</button>
-      <button class="soju-badge" onclick="selectSojuBadge(this,'1병')" style="padding:6px 14px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">🍾 1병</button>
+      <div style="font-size:12px;color:#888;font-weight:500;width:100%;margin-bottom:4px;">🍶 Select Type</div>
+      <button class="soju-badge active-badge" onclick="selectSojuBadge(this,'All')" style="padding:6px 14px;border-radius:20px;border:1.5px solid #FF4F4F;background:#FF4F4F;color:#fff;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">All</button>
+      <button class="soju-badge" onclick="selectSojuBadge(this,'1 Box')" style="padding:6px 14px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">📦 1 Box</button>
+      <button class="soju-badge" onclick="selectSojuBadge(this,'6 Pack')" style="padding:6px 14px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">🧃 6 Pack</button>
+      <button class="soju-badge" onclick="selectSojuBadge(this,'1 Bottle')" style="padding:6px 14px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">🍾 1 Bottle</button>
       <button class="soju-badge" onclick="selectSojuBadge(this,'Apple')" style="padding:6px 14px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">🍎 Apple</button>
       <button class="soju-badge" onclick="selectSojuBadge(this,'Strawberry')" style="padding:6px 14px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">🍓 Strawberry</button>
       <button class="soju-badge" onclick="selectSojuBadge(this,'Moscato')" style="padding:6px 14px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">🍇 Moscato</button>
       <button class="soju-badge" onclick="selectSojuBadge(this,'Americano')" style="padding:6px 14px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">☕ Americano</button>
     </div>
-    <!-- 상품 그리드 -->
+    <!-- PRODUCT GRID -->
     <div id="menuGrid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:0 28px 16px;"></div>
-    <!-- 장바구니 바 -->
+    <!-- CART BAR -->
     <div id="cartBar" style="display:none;margin:0 28px;padding:14px 18px;background:#FFF0F0;border-radius:12px;display:flex;align-items:center;justify-content:space-between;">
-      <div style="font-size:13px;color:#111;"><span id="cartCount" style="font-weight:700;color:#FF4F4F;">0</span>개 선택 · 합계 <span id="cartTotal" style="font-weight:700;">0</span>원</div>
-      <button onclick="goToPayment()" style="background:#FF4F4F;color:#fff;border:none;border-radius:8px;padding:10px 20px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">결제하기 →</button>
+      <div style="font-size:13px;color:#111;"><span id="cartCount" style="font-weight:700;color:#FF4F4F;">0</span> items · Total <span id="cartTotal" style="font-weight:700;">0</span>원</div>
+      <button onclick="goToPayment()" style="background:#FF4F4F;color:#fff;border:none;border-radius:8px;padding:10px 20px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">Checkout →</button>
     </div>
     <div style="height:24px;"></div>
   </div>
 </div>
 
-<!-- ── 간편 결제 모달 ── -->
+<!-- ── Easy Payment 모달 ── -->
 <div id="payModal" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.5);align-items:center;justify-content:center;">
   <div style="background:#fff;border-radius:20px;width:100%;max-width:480px;margin:0 16px;animation:modalIn 0.25s ease;">
     <div style="padding:24px 28px 0;display:flex;justify-content:space-between;align-items:center;">
-      <div style="font-size:18px;font-weight:700;color:#111;">💳 간편 결제</div>
+      <div style="font-size:18px;font-weight:700;color:#111;">💳 Easy Payment</div>
       <button onclick="closeModal('payModal')" style="border:none;background:none;font-size:22px;color:#bbb;cursor:pointer;">✕</button>
     </div>
-    <div style="padding:8px 28px 0;font-size:13px;color:#aaa;">결제 수단을 선택하세요</div>
+    <div style="padding:8px 28px 0;font-size:13px;color:#aaa;">Select payment method</div>
 
     <!-- 주문 요약 -->
     <div style="margin:16px 28px;background:#f9f9f9;border-radius:12px;padding:16px;">
-      <div style="font-size:12px;color:#aaa;margin-bottom:8px;font-weight:500;">주문 내역</div>
-      <div id="payOrderSummary" style="font-size:14px;color:#333;line-height:1.8;">장바구니가 비어있습니다.</div>
+      <div style="font-size:12px;color:#aaa;margin-bottom:8px;font-weight:500;">Order Summary</div>
+      <div id="payOrderSummary" style="font-size:14px;color:#333;line-height:1.8;">Your cart is empty.</div>
       <div style="border-top:1px solid #eee;margin-top:10px;padding-top:10px;display:flex;justify-content:space-between;">
-        <span style="font-size:13px;color:#888;">총 결제금액</span>
+        <span style="font-size:13px;color:#888;">Total</span>
         <span id="payTotal" style="font-size:16px;font-weight:700;color:#FF4F4F;">A$0.00</span>
       </div>
     </div>
 
     <!-- 결제 수단 -->
     <div style="padding:0 28px;">
-      <div style="font-size:13px;font-weight:500;color:#555;margin-bottom:12px;">결제 수단 선택</div>
+      <div style="font-size:13px;font-weight:500;color:#555;margin-bottom:12px;">Payment Method</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
-        <div class="pay-method" onclick="selectPay(this,'계좌이체')" style="border:1.5px solid #eee;border-radius:12px;padding:16px;text-align:center;cursor:pointer;transition:all 0.15s;">
+        <div class="pay-method" onclick="selectPay(this,'Bank Transfer')" style="border:1.5px solid #eee;border-radius:12px;padding:16px;text-align:center;cursor:pointer;transition:all 0.15s;">
           <div style="font-size:28px;margin-bottom:6px;">🏦</div>
-          <div style="font-size:13px;font-weight:500;color:#333;">계좌이체</div>
+          <div style="font-size:13px;font-weight:500;color:#333;">Bank Transfer</div>
           <div style="font-size:11px;color:#aaa;margin-top:2px;">Bank Transfer</div>
         </div>
-        <div class="pay-method" onclick="selectPay(this,'신용카드')" style="border:1.5px solid #eee;border-radius:12px;padding:16px;text-align:center;cursor:pointer;transition:all 0.15s;">
+        <div class="pay-method" onclick="selectPay(this,'Credit Card')" style="border:1.5px solid #eee;border-radius:12px;padding:16px;text-align:center;cursor:pointer;transition:all 0.15s;">
           <div style="font-size:28px;margin-bottom:6px;">💳</div>
-          <div style="font-size:13px;font-weight:500;color:#333;">신용카드</div>
+          <div style="font-size:13px;font-weight:500;color:#333;">Credit Card</div>
           <div style="font-size:11px;color:#aaa;margin-top:2px;">Credit / Debit Card</div>
         </div>
       </div>
 
-      <!-- 계좌이체 입력 폼 -->
+      <!-- Bank Transfer 입력 폼 -->
       <div id="bankForm" style="display:none;background:#f9f9f9;border-radius:12px;padding:16px;margin-bottom:12px;">
         <!-- 내 은행 (보내는 사람) -->
-        <div style="font-size:12px;color:#FF4F4F;font-weight:600;margin-bottom:8px;">💸 내 계좌 (보내는 사람)</div>
+        <div style="font-size:12px;color:#FF4F4F;font-weight:600;margin-bottom:8px;">💸 My Account (Sender)</div>
         <select style="width:100%;border:1.5px solid #eee;border-radius:8px;padding:10px;font-size:13px;font-family:'Noto Sans KR',sans-serif;margin-bottom:8px;outline:none;color:#333;background:#fff;">
-          <option value="">내 은행 선택 (My Bank)</option>
+          <option value="">Select My Bank</option>
           <option>ANZ</option>
           <option>NAB (National Australia Bank)</option>
           <option>Bankwest</option>
@@ -736,14 +736,14 @@
         <input type="text" placeholder="A/N" style="width:100%;border:1.5px solid #eee;border-radius:8px;padding:10px;font-size:13px;font-family:'Noto Sans KR',sans-serif;outline:none;color:#333;margin-bottom:16px;">
 
         <!-- 받는 사람 계좌 - 고정 (수정 불가) -->
-        <div style="font-size:12px;color:#3A7BD5;font-weight:600;margin-bottom:8px;">📥 받는 사람 계좌 (Recipient) — 고정</div>
+        <div style="font-size:12px;color:#3A7BD5;font-weight:600;margin-bottom:8px;">📥 Recipient Account — Fixed</div>
         <div style="background:#EEF5FF;border-radius:10px;padding:14px 16px;border:1.5px solid #B5D4F4;">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-            <span style="font-size:12px;color:#3A7BD5;font-weight:500;">은행 (Bank)</span>
+            <span style="font-size:12px;color:#3A7BD5;font-weight:500;">Bank</span>
             <span style="font-size:13px;font-weight:700;color:#111;">Westpac</span>
           </div>
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-            <span style="font-size:12px;color:#3A7BD5;font-weight:500;">이름 (Name)</span>
+            <span style="font-size:12px;color:#3A7BD5;font-weight:500;">Name</span>
             <span style="font-size:13px;font-weight:700;color:#111;">Yong Gil PAE</span>
           </div>
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
@@ -754,48 +754,48 @@
             <span style="font-size:12px;color:#3A7BD5;font-weight:500;">A/N</span>
             <span style="font-size:13px;font-weight:700;color:#111;">540229</span>
           </div>
-          <div style="margin-top:10px;padding-top:10px;border-top:1px solid #B5D4F4;font-size:11px;color:#888;text-align:center;">🔒 수정할 수 없는 고정 계좌입니다</div>
+          <div style="margin-top:10px;padding-top:10px;border-top:1px solid #B5D4F4;font-size:11px;color:#888;text-align:center;">🔒 This recipient account is fixed and cannot be edited</div>
         </div>
       </div>
 
       <!-- 카드 입력 폼 -->
       <div id="cardForm" style="display:none;background:#f9f9f9;border-radius:12px;padding:16px;margin-bottom:12px;">
-        <div style="font-size:12px;color:#888;margin-bottom:10px;font-weight:500;">카드 정보 (Card Details)</div>
-        <input type="text" placeholder="카드번호 0000 - 0000 - 0000 - 0000" style="width:100%;border:1.5px solid #eee;border-radius:8px;padding:10px;font-size:13px;font-family:'Noto Sans KR',sans-serif;outline:none;margin-bottom:8px;color:#333;">
+        <div style="font-size:12px;color:#888;margin-bottom:10px;font-weight:500;">Card Details</div>
+        <input type="text" placeholder="Card Number 0000 - 0000 - 0000 - 0000" style="width:100%;border:1.5px solid #eee;border-radius:8px;padding:10px;font-size:13px;font-family:'Noto Sans KR',sans-serif;outline:none;margin-bottom:8px;color:#333;">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-          <input type="text" placeholder="유효기간 MM/YY" style="border:1.5px solid #eee;border-radius:8px;padding:10px;font-size:13px;font-family:'Noto Sans KR',sans-serif;outline:none;color:#333;">
+          <input type="text" placeholder="Expiry MM/YY" style="border:1.5px solid #eee;border-radius:8px;padding:10px;font-size:13px;font-family:'Noto Sans KR',sans-serif;outline:none;color:#333;">
           <input type="text" placeholder="CVC" style="border:1.5px solid #eee;border-radius:8px;padding:10px;font-size:13px;font-family:'Noto Sans KR',sans-serif;outline:none;color:#333;">
         </div>
       </div>
 
       <!-- 지불하기 버튼 -->
-      <button id="payBtn" onclick="processPayment()" disabled style="width:100%;background:#ddd;color:#fff;border:none;border-radius:12px;padding:15px;font-size:15px;font-weight:700;cursor:not-allowed;font-family:'Noto Sans KR',sans-serif;transition:background 0.2s;margin-bottom:20px;">결제 수단을 선택해 주세요</button>
+      <button id="payBtn" onclick="processPayment()" disabled style="width:100%;background:#ddd;color:#fff;border:none;border-radius:12px;padding:15px;font-size:15px;font-weight:700;cursor:not-allowed;font-family:'Noto Sans KR',sans-serif;transition:background 0.2s;margin-bottom:20px;">Please select a payment method</button>
     </div>
   </div>
 </div>
 
-<!-- ── 배달 추적 모달 ── -->
+<!-- ── Delivery Tracking 모달 ── -->
 <div id="trackModal" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.5);align-items:center;justify-content:center;">
   <div style="background:#fff;border-radius:20px;width:100%;max-width:500px;margin:0 16px;animation:modalIn 0.25s ease;">
     <div style="padding:24px 28px 0;display:flex;justify-content:space-between;align-items:center;">
-      <div style="font-size:18px;font-weight:700;color:#111;">🛵 실시간 배달 추적</div>
+      <div style="font-size:18px;font-weight:700;color:#111;">🛵 Live Delivery Tracking</div>
       <button onclick="closeModal('trackModal');stopTracking();" style="border:none;background:none;font-size:22px;color:#bbb;cursor:pointer;">✕</button>
     </div>
 
-    <!-- 지도 시뮬레이션 -->
+    <!-- Map Simulation -->
     <div style="margin:16px 28px;border-radius:16px;overflow:hidden;border:1px solid #eee;position:relative;height:200px;background:#E8F4F8;">
       <div style="position:absolute;inset:0;background:linear-gradient(135deg,#E8F4F8 0%,#D0EAF0 100%);display:flex;align-items:center;justify-content:center;">
         <div style="text-align:center;">
           <div id="mapRider" style="font-size:36px;position:absolute;transition:all 1s ease;" >🛵</div>
-          <div style="font-size:13px;color:#7aaabb;font-weight:500;margin-top:60px;">지도 시뮬레이션</div>
+          <div style="font-size:13px;color:#7aaabb;font-weight:500;margin-top:60px;">Map Simulation</div>
           <!-- 도로 -->
           <div style="position:absolute;top:50%;left:10%;right:10%;height:3px;background:rgba(255,255,255,0.6);border-radius:2px;"></div>
           <div style="position:absolute;left:40%;top:10%;bottom:10%;width:3px;background:rgba(255,255,255,0.6);border-radius:2px;"></div>
         </div>
       </div>
-      <!-- 목적지 핀 -->
+      <!-- Destination 핀 -->
       <div style="position:absolute;bottom:24px;right:32px;font-size:28px;">📍</div>
-      <div style="position:absolute;bottom:8px;right:24px;font-size:11px;color:#555;font-weight:500;background:rgba(255,255,255,0.8);padding:2px 6px;border-radius:4px;">목적지</div>
+      <div style="position:absolute;bottom:8px;right:24px;font-size:11px;color:#555;font-weight:500;background:rgba(255,255,255,0.8);padding:2px 6px;border-radius:4px;">Destination</div>
     </div>
 
     <!-- 상태 스텝 -->
@@ -805,19 +805,19 @@
         <div id="trackProgress" style="position:absolute;top:14px;left:14px;height:2px;background:#FF4F4F;z-index:1;transition:width 1s ease;width:0%;"></div>
         <div class="track-step" id="ts0" style="display:flex;flex-direction:column;align-items:center;gap:6px;z-index:2;width:25%;">
           <div style="width:28px;height:28px;border-radius:50%;background:#FF4F4F;display:flex;align-items:center;justify-content:center;font-size:12px;">✓</div>
-          <div style="font-size:11px;color:#FF4F4F;font-weight:500;text-align:center;">주문완료</div>
+          <div style="font-size:11px;color:#FF4F4F;font-weight:500;text-align:center;">Ordered</div>
         </div>
         <div class="track-step" id="ts1" style="display:flex;flex-direction:column;align-items:center;gap:6px;z-index:2;width:25%;">
           <div style="width:28px;height:28px;border-radius:50%;background:#eee;display:flex;align-items:center;justify-content:center;font-size:12px;color:#bbb;">2</div>
-          <div style="font-size:11px;color:#bbb;font-weight:500;text-align:center;">준비중</div>
+          <div style="font-size:11px;color:#bbb;font-weight:500;text-align:center;">Preparing</div>
         </div>
         <div class="track-step" id="ts2" style="display:flex;flex-direction:column;align-items:center;gap:6px;z-index:2;width:25%;">
           <div style="width:28px;height:28px;border-radius:50%;background:#eee;display:flex;align-items:center;justify-content:center;font-size:12px;color:#bbb;">3</div>
-          <div style="font-size:11px;color:#bbb;font-weight:500;text-align:center;">배달중</div>
+          <div style="font-size:11px;color:#bbb;font-weight:500;text-align:center;">On the Way</div>
         </div>
         <div class="track-step" id="ts3" style="display:flex;flex-direction:column;align-items:center;gap:6px;z-index:2;width:25%;">
           <div style="width:28px;height:28px;border-radius:50%;background:#eee;display:flex;align-items:center;justify-content:center;font-size:12px;color:#bbb;">4</div>
-          <div style="font-size:11px;color:#bbb;font-weight:500;text-align:center;">도착</div>
+          <div style="font-size:11px;color:#bbb;font-weight:500;text-align:center;">Arrived</div>
         </div>
       </div>
     </div>
@@ -826,8 +826,8 @@
     <div style="margin:0 28px 16px;background:#FFF0F0;border-radius:12px;padding:16px;display:flex;align-items:center;gap:12px;">
       <div id="trackIcon" style="font-size:28px;">📦</div>
       <div>
-        <div id="trackStatus" style="font-size:14px;font-weight:700;color:#111;margin-bottom:2px;">주문이 접수되었습니다</div>
-        <div id="trackEta" style="font-size:12px;color:#FF4F4F;">예상 도착 시간: 약 30분</div>
+        <div id="trackStatus" style="font-size:14px;font-weight:700;color:#111;margin-bottom:2px;">Order received!</div>
+        <div id="trackEta" style="font-size:12px;color:#FF4F4F;">Est. arrival: ~30 min</div>
       </div>
     </div>
 
@@ -835,95 +835,95 @@
     <div style="margin:0 28px 24px;border:1px solid #f0f0f0;border-radius:12px;padding:14px;display:flex;align-items:center;gap:12px;">
       <div style="width:40px;height:40px;border-radius:50%;background:#FFF0F0;display:flex;align-items:center;justify-content:center;font-size:20px;">🧑‍🦱</div>
       <div style="flex:1;">
-        <div style="font-size:13px;font-weight:500;color:#111;">김민준 라이더</div>
-        <div style="font-size:12px;color:#aaa;">⭐ 4.9 · 배달 1,247회</div>
+        <div style="font-size:13px;font-weight:500;color:#111;">James Kim — Rider</div>
+        <div style="font-size:12px;color:#aaa;">⭐ 4.9 · 1,247 deliveries</div>
       </div>
-      <button style="background:#fff;border:1.5px solid #FF4F4F;color:#FF4F4F;border-radius:8px;padding:8px 14px;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">📞 연락</button>
+      <button style="background:#fff;border:1.5px solid #FF4F4F;color:#FF4F4F;border-radius:8px;padding:8px 14px;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">📞 Call</button>
     </div>
   </div>
 </div>
 
-<!-- ── 장바구니 모달 ── -->
+<!-- CART MODAL -->
 <div id="cartModal" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.5);align-items:flex-start;justify-content:center;padding-top:60px;">
   <div style="background:#fff;border-radius:20px;width:100%;max-width:480px;margin:0 16px 40px;animation:modalIn 0.25s ease;">
     <div style="padding:24px 28px 0;display:flex;justify-content:space-between;align-items:center;">
-      <div style="font-size:18px;font-weight:700;color:#111;">🛒 장바구니</div>
+      <div style="font-size:18px;font-weight:700;color:#111;">🛒 My Cart</div>
       <button onclick="closeModal('cartModal')" style="border:none;background:none;font-size:22px;color:#bbb;cursor:pointer;">✕</button>
     </div>
     <div id="cartItemList" style="padding:16px 28px;max-height:320px;overflow-y:auto;"></div>
     <div style="margin:0 28px;border-top:1px solid #eee;padding-top:12px;display:flex;justify-content:space-between;align-items:center;">
-      <span style="font-size:13px;color:#888;">총 <span id="cartTotalCount">0</span>개 상품</span>
-      <span style="font-size:16px;font-weight:700;color:#FF4F4F;" id="cartTotalPrice">0원</span>
+      <span style="font-size:13px;color:#888;">Total <span id="cartTotalCount">0</span> items</span>
+      <span style="font-size:16px;font-weight:700;color:#FF4F4F;" id="cartTotalPrice">A$0.00</span>
     </div>
     <div style="padding:16px 28px 28px;display:flex;gap:8px;">
-      <button onclick="closeModal('cartModal')" style="flex:1;background:#f7f7f7;color:#555;border:none;border-radius:12px;padding:14px;font-size:14px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">계속 쇼핑</button>
-      <button onclick="closeModal('cartModal');openPayModal();" style="flex:2;background:#FF4F4F;color:#fff;border:none;border-radius:12px;padding:14px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">결제하기 →</button>
+      <button onclick="closeModal('cartModal')" style="flex:1;background:#f7f7f7;color:#555;border:none;border-radius:12px;padding:14px;font-size:14px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">Continue Shopping</button>
+      <button onclick="closeModal('cartModal');openPayModal();" style="flex:2;background:#FF4F4F;color:#fff;border:none;border-radius:12px;padding:14px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">Checkout →</button>
     </div>
   </div>
 </div>
 
-<!-- ── 주소 입력 모달 ── -->
+<!-- ── Enter Address 모달 ── -->
 <div id="addressModal" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.5);align-items:center;justify-content:center;">
   <div style="background:#fff;border-radius:20px;width:100%;max-width:480px;margin:0 16px;overflow:hidden;animation:modalIn 0.25s ease;">
     <div style="padding:24px 28px 0;display:flex;justify-content:space-between;align-items:center;">
-      <div style="font-size:18px;font-weight:700;color:#111;letter-spacing:-0.5px;">📍 배달 주소 입력</div>
+      <div style="font-size:18px;font-weight:700;color:#111;letter-spacing:-0.5px;">📍 Enter Delivery Address</div>
       <button onclick="closeAddressModal()" style="border:none;background:none;font-size:22px;color:#bbb;cursor:pointer;line-height:1;padding:4px;">✕</button>
     </div>
-    <div style="padding:8px 28px 0;font-size:13px;color:#aaa;font-weight:300;">주소를 직접 입력하거나 검색하세요</div>
+    <div style="padding:8px 28px 0;font-size:13px;color:#aaa;font-weight:300;">Type your address or search below</div>
     <div style="display:flex;gap:0;padding:20px 28px 0;">
-      <button id="tabSearch" onclick="switchTab('search')" style="flex:1;padding:10px;font-size:13px;font-weight:500;border:1.5px solid #FF4F4F;border-right:none;border-radius:8px 0 0 8px;background:#FF4F4F;color:#fff;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">🔍 주소 검색</button>
-      <button id="tabGps" onclick="switchTab('gps')" style="flex:1;padding:10px;font-size:13px;font-weight:500;border:1.5px solid #eee;border-left:none;border-radius:0 8px 8px 0;background:#fff;color:#888;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">📡 현재 위치</button>
+      <button id="tabSearch" onclick="switchTab('search')" style="flex:1;padding:10px;font-size:13px;font-weight:500;border:1.5px solid #FF4F4F;border-right:none;border-radius:8px 0 0 8px;background:#FF4F4F;color:#fff;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">🔍 Search</button>
+      <button id="tabGps" onclick="switchTab('gps')" style="flex:1;padding:10px;font-size:13px;font-weight:500;border:1.5px solid #eee;border-left:none;border-radius:0 8px 8px 0;background:#fff;color:#888;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">📡 My Location</button>
     </div>
     <div id="panelSearch" style="padding:16px 28px;">
       <div style="display:flex;gap:8px;margin-bottom:12px;">
-        <input id="addrInput" type="text" placeholder="예: 12 Flaming Way, Willetton WA 6155" 
+        <input id="addrInput" type="text" placeholder="e.g. 12 Flaming Way, Willetton WA 6155" 
           onkeydown="if(event.key==='Enter')searchAddress()"
           oninput="onAddrType(this.value)"
           style="flex:1;border:1.5px solid #eee;border-radius:10px;padding:12px 16px;font-size:14px;font-family:'Noto Sans KR',sans-serif;outline:none;transition:border-color 0.2s;color:#111;"
           onfocus="this.style.borderColor='#FF4F4F'" onblur="this.style.borderColor='#eee'">
-        <button onclick="searchAddress()" style="background:#FF4F4F;color:#fff;border:none;border-radius:10px;padding:12px 18px;font-size:13px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;white-space:nowrap;">검색</button>
+        <button onclick="searchAddress()" style="background:#FF4F4F;color:#fff;border:none;border-radius:10px;padding:12px 18px;font-size:13px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;white-space:nowrap;">Search</button>
       </div>
       <div id="addrResults" style="max-height:220px;overflow-y:auto;border-radius:10px;border:1px solid #f0f0f0;display:none;"></div>
       <div id="recentSection" style="margin-top:8px;">
-        <div style="font-size:12px;color:#bbb;margin-bottom:8px;font-weight:500;">최근 주소</div>
+        <div style="font-size:12px;color:#bbb;margin-bottom:8px;font-weight:500;">Recent Addresses</div>
         <div id="recentList"></div>
       </div>
     </div>
     <div id="panelGps" style="padding:16px 28px;display:none;text-align:center;">
       <div style="padding:28px 0;">
         <div style="font-size:48px;margin-bottom:16px;">📡</div>
-        <div style="font-size:15px;font-weight:500;color:#111;margin-bottom:8px;">현재 위치를 가져올게요</div>
-        <div style="font-size:13px;color:#aaa;margin-bottom:24px;">브라우저에서 위치 접근을 허용해 주세요</div>
-        <button onclick="getGPS()" style="background:#FF4F4F;color:#fff;border:none;border-radius:12px;padding:14px 36px;font-size:14px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">내 위치 찾기</button>
+        <div style="font-size:15px;font-weight:500;color:#111;margin-bottom:8px;">Getting your location...</div>
+        <div style="font-size:13px;color:#aaa;margin-bottom:24px;">Please allow location access in your browser</div>
+        <button onclick="getGPS()" style="background:#FF4F4F;color:#fff;border:none;border-radius:12px;padding:14px 36px;font-size:14px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">Find My Location</button>
         <div id="gpsResult" style="margin-top:16px;font-size:13px;color:#555;min-height:20px;"></div>
       </div>
     </div>
     <div id="selectedBar" style="display:none;margin:0 28px 16px;background:#FFF0F0;border-radius:10px;padding:14px 16px;align-items:center;gap:10px;">
       <span style="font-size:18px;">📍</span>
       <div style="flex:1;">
-        <div style="font-size:12px;color:#FF4F4F;font-weight:500;margin-bottom:2px;">선택된 주소</div>
+        <div style="font-size:12px;color:#FF4F4F;font-weight:500;margin-bottom:2px;">Selected Address</div>
         <div id="selectedText" style="font-size:14px;font-weight:500;color:#111;"></div>
       </div>
     </div>
     <div style="padding:0 28px 28px;">
-      <button onclick="confirmAddress()" id="confirmBtn" disabled style="width:100%;background:#ddd;color:#fff;border:none;border-radius:12px;padding:15px;font-size:15px;font-weight:700;cursor:not-allowed;font-family:'Noto Sans KR',sans-serif;transition:background 0.2s;letter-spacing:-0.3px;">이 주소로 선물 받기</button>
+      <button onclick="confirmAddress()" id="confirmBtn" disabled style="width:100%;background:#ddd;color:#fff;border:none;border-radius:12px;padding:15px;font-size:15px;font-weight:700;cursor:not-allowed;font-family:'Noto Sans KR',sans-serif;transition:background 0.2s;letter-spacing:-0.3px;">Confirm This Address</button>
     </div>
   </div>
 </div>
 
 <div id="toast" style="display:none;position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:#222;color:#fff;padding:14px 28px;border-radius:40px;font-size:14px;font-weight:500;z-index:2000;font-family:'Noto Sans KR',sans-serif;white-space:nowrap;">
-  ✅ 주소가 저장되었습니다!
+  ✅ Address saved!
 </div>
 
-<!-- ── FOOTER ── -->
+<!-- FOOTER -->
 <footer style="background:#fff;border-top:1px solid #eee;padding:28px 32px;margin-top:0;">
   <div style="max-width:1060px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;">
-    <div style="font-size:18px;font-weight:700;color:#3C1E1E;">선물<span style="color:#FF4F4F;">하기</span></div>
-    <div style="font-size:12px;color:#bbb;">© 2025 선물하기 · All rights reserved</div>
+    <div style="font-size:18px;font-weight:700;color:#3C1E1E;">PGB<span style="color:#FF4F4F;">Gift</span></div>
+    <div style="font-size:12px;color:#bbb;">© 2025 PGB Gift · All rights reserved</div>
     <div style="display:flex;gap:20px;font-size:12px;">
-      <a href="#" style="color:#aaa;text-decoration:none;">이용약관</a>
-      <a href="#" style="color:#aaa;text-decoration:none;">개인정보처리방침</a>
-      <a href="#" style="color:#aaa;text-decoration:none;">고객센터</a>
+      <a href="#" style="color:#aaa;text-decoration:none;">Terms</a>
+      <a href="#" style="color:#aaa;text-decoration:none;">Privacy</a>
+      <a href="#" style="color:#aaa;text-decoration:none;">Support</a>
     </div>
   </div>
 </footer>
@@ -943,7 +943,7 @@
     btn.style.color = '#FF4F4F';
     btn.style.fontSize = '16px';
     updateCartBadge();
-    showToast('🛒 장바구니에 담았습니다!');
+    showToast('🛒 Added to cart!');
     setTimeout(() => { btn.textContent = '🛒'; btn.style.color = ''; btn.style.fontSize = ''; }, 1500);
   }
 
@@ -957,9 +957,9 @@
   function openCartModal() {
     const list = document.getElementById('cartItemList');
     if (!mainCart.length) {
-      list.innerHTML = '<div style="text-align:center;padding:32px;color:#bbb;font-size:14px;">장바구니가 비어있어요<br><span style="font-size:32px;">🛒</span></div>';
+      list.innerHTML = '<div style="text-align:center;padding:32px;color:#bbb;font-size:14px;">Your cart is empty<br><span style="font-size:32px;">🛒</span></div>';
       document.getElementById('cartTotalCount').textContent = '0';
-      document.getElementById('cartTotalPrice').textContent = '0원';
+      document.getElementById('cartTotalPrice').textContent = 'A$0.00';
     } else {
       list.innerHTML = mainCart.map((item,i) => `
         <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid #f5f5f5;">
@@ -976,7 +976,7 @@
         </div>`).join('');
       const total = mainCart.reduce((s,i) => s+i.qty, 0);
       document.getElementById('cartTotalCount').textContent = total;
-      document.getElementById('cartTotalPrice').textContent = '합계 ' + total + '개';
+      document.getElementById('cartTotalPrice').textContent = 'Total ' + total + '';
     }
     document.getElementById('cartModal').style.display = 'flex';
     document.body.style.overflow = 'hidden';
@@ -1010,41 +1010,41 @@
     });
   });
 
-  /* ── 메뉴 선택 ── */
+  /* ── Select Items ── */
   const MENU_ITEMS = [
-    {id:1,cat:'케이크',name:'파리바게뜨 카카오 케이크',price:22320,icon:'🎂',bg:'#FDEEF5'},
-    {id:2,cat:'케이크',name:'배스킨라빈스 아이스크림 케이크',price:35900,icon:'🍦',bg:'#EEF5FF'},
-    {id:3,cat:'소주',sub:'1박스',name:'더 찾을수록 소주 1박스',price:180,icon:'📦',bg:'#F0F4FF',aud:true},
-    {id:4,cat:'소주',sub:'6팩',name:'더 찾을수록 소주 6팩',price:70,icon:'🧃',bg:'#F0FFF4',aud:true},
-    {id:5,cat:'소주',sub:'1병',name:'더 찾을수록 소주 1병',price:12,icon:'🍾',bg:'#FFF8F0',aud:true},
-    {id:6,cat:'소주',sub:'Apple',name:'더 찾을수록 Apple 소주 1병',price:12,icon:'🍎',bg:'#FFF0F0',aud:true},
-    {id:7,cat:'소주',sub:'Strawberry',name:'더 찾을수록 Strawberry 소주 1병',price:12,icon:'🍓',bg:'#FFF0F5',aud:true},
-    {id:8,cat:'소주',sub:'Moscato',name:'더 찾을수록 Moscato 소주 1병',price:12,icon:'🍇',bg:'#F5F0FF',aud:true},
-    {id:9,cat:'소주',sub:'Americano',name:'더 찾을수록 Americano 소주 1병',price:12,icon:'☕',bg:'#FFF8F0',aud:true},
-    {id:10,cat:'뷰티',name:'설화수 윤조에센스 50ml',price:89000,icon:'🧴',bg:'#FAF5EC'},
-    {id:11,cat:'뷰티',name:'설화수 자음생 크림',price:150000,icon:'🌺',bg:'#FFF0F0'},
-    {id:12,cat:'패션',name:'오프아워 반팔 티셔츠',price:39900,icon:'👕',bg:'#EEF5FF'},
-    {id:13,cat:'패션',name:'오프아워 파자마 세트',price:41900,icon:'🧥',bg:'#F4EEFF'},
-    {id:14,cat:'건강',name:'종근당 비타민C 1000',price:18900,icon:'💊',bg:'#EDFBF4'},
+    {id:1,cat:'Cake',name:'Paris Baguette Kakao Cake',price:22320,icon:'🎂',bg:'#FDEEF5'},
+    {id:2,cat:'Cake',name:'Baskin Robbins Ice Cream Cake',price:35900,icon:'🍦',bg:'#EEF5FF'},
+    {id:3,cat:'Soju',sub:'1 Box',name:'Chateau Soorok Soju 1 Box',price:180,icon:'📦',bg:'#F0F4FF',aud:true},
+    {id:4,cat:'Soju',sub:'6 Pack',name:'Chateau Soorok Soju 6 Pack',price:70,icon:'🧃',bg:'#F0FFF4',aud:true},
+    {id:5,cat:'Soju',sub:'1 Bottle',name:'Chateau Soorok Soju 1 Bottle',price:12,icon:'🍾',bg:'#FFF8F0',aud:true},
+    {id:6,cat:'Soju',sub:'Apple',name:'Chateau Soorok Apple Soju',price:12,icon:'🍎',bg:'#FFF0F0',aud:true},
+    {id:7,cat:'Soju',sub:'Strawberry',name:'Chateau Soorok Strawberry Soju',price:12,icon:'🍓',bg:'#FFF0F5',aud:true},
+    {id:8,cat:'Soju',sub:'Moscato',name:'Chateau Soorok Moscato Soju',price:12,icon:'🍇',bg:'#F5F0FF',aud:true},
+    {id:9,cat:'Soju',sub:'Americano',name:'Chateau Soorok Americano Soju',price:12,icon:'☕',bg:'#FFF8F0',aud:true},
+    {id:10,cat:'Beauty',name:'Sulwhasoo Yunjosaeng Essence 50ml',price:89000,icon:'🧴',bg:'#FAF5EC'},
+    {id:11,cat:'Beauty',name:'Sulwhasoo Jaeumsaeng Cream',price:150000,icon:'🌺',bg:'#FFF0F0'},
+    {id:12,cat:'Fashion',name:'Off Hour Short Sleeve T-Shirt',price:39900,icon:'👕',bg:'#EEF5FF'},
+    {id:13,cat:'Fashion',name:'Off Hour Pajama Set',price:41900,icon:'🧥',bg:'#F4EEFF'},
+    {id:14,cat:'Health',name:'Vitamin C 1000mg',price:18900,icon:'💊',bg:'#EDFBF4'},
   ];
   let cart = {};
-  let currentCat = '전체';
+  let currentCat = 'All';
 
   function openMenuModal() {
     document.getElementById('menuModal').style.display = 'flex';
     document.body.style.overflow = 'hidden';
     document.getElementById('sojuBadgeBar').style.display = 'none';
-    renderMenu('전체', '전체');
+    renderMenu('All', 'All');
     updateCartBar();
   }
 
   function renderMenu(cat, sub) {
     currentCat = cat;
-    let items = cat === '전체' ? MENU_ITEMS : MENU_ITEMS.filter(m => m.cat === cat);
-    if (cat === '소주' && sub && sub !== '전체') {
+    let items = cat === 'All' ? MENU_ITEMS : MENU_ITEMS.filter(m => m.cat === cat);
+    if (cat === 'Soju' && sub && sub !== 'All') {
       items = items.filter(m => m.sub === sub);
     }
-    document.getElementById('sojuBadgeBar').style.display = cat === '소주' ? 'flex' : 'none';
+    document.getElementById('sojuBadgeBar').style.display = cat === 'Soju' ? 'flex' : 'none';
     document.getElementById('menuGrid').innerHTML = items.map(m => `
       <div style="border:1.5px solid ${cart[m.id] ? '#FF4F4F' : '#eee'};border-radius:12px;overflow:hidden;cursor:pointer;transition:all 0.15s;background:#fff;" onclick="toggleCart(${m.id})" id="menuCard${m.id}">
         <div style="height:80px;background:${m.bg};display:flex;align-items:center;justify-content:center;font-size:36px;">${m.icon}</div>
@@ -1052,7 +1052,7 @@
           <div style="font-size:12px;color:#999;margin-bottom:3px;">${m.cat}${m.sub ? ' · '+m.sub : ''}</div>
           <div style="font-size:12px;font-weight:500;color:#222;line-height:1.4;min-height:32px;">${m.name}</div>
           <div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px;">
-            <div style="font-size:13px;font-weight:700;color:#111;">${m.aud ? 'A$'+m.price : m.price.toLocaleString()+'원'}</div>
+            <div style="font-size:13px;font-weight:700;color:#111;">${m.aud ? 'A$'+m.price : m.price.toLocaleString()}</div>
             <div style="width:22px;height:22px;border-radius:50%;background:${cart[m.id] ? '#FF4F4F' : '#eee'};display:flex;align-items:center;justify-content:center;font-size:14px;color:${cart[m.id] ? '#fff' : '#bbb'};font-weight:700;">${cart[m.id] ? '✓' : '+'}</div>
           </div>
         </div>
@@ -1064,13 +1064,13 @@
       b.style.background='#fff'; b.style.color='#888'; b.style.borderColor='#eee';
     });
     btn.style.background='#FF4F4F'; btn.style.color='#fff'; btn.style.borderColor='#FF4F4F';
-    renderMenu('소주', sub);
+    renderMenu('Soju', sub);
   }
 
   function toggleCart(id) {
     cart[id] = !cart[id];
     const m = MENU_ITEMS.find(x => x.id === id);
-    renderMenu(currentCat, '전체');
+    renderMenu(currentCat, 'All');
     updateCartBar();
   }
 
@@ -1087,13 +1087,13 @@
       b.style.background='#fff'; b.style.color='#888'; b.style.borderColor='#eee';
     });
     btn.style.background='#FF4F4F'; btn.style.color='#fff'; btn.style.borderColor='#FF4F4F';
-    if (cat !== '소주') document.getElementById('sojuBadgeBar').style.display = 'none';
+    if (cat !== 'Soju') document.getElementById('sojuBadgeBar').style.display = 'none';
     document.querySelectorAll('.soju-badge').forEach((b,i) => {
       b.style.background = i===0 ? '#FF4F4F' : '#fff';
       b.style.color = i===0 ? '#fff' : '#888';
       b.style.borderColor = i===0 ? '#FF4F4F' : '#eee';
     });
-    renderMenu(cat, '전체');
+    renderMenu(cat, 'All');
   }
 
   function goToPayment() {
@@ -1101,7 +1101,7 @@
     openPayModal();
   }
 
-  /* ── 간편 결제 ── */
+  /* ── Easy Payment ── */
   let selectedPayMethod = '';
 
   function openPayModal() {
@@ -1112,7 +1112,7 @@
     document.getElementById('payBtn').disabled = true;
     document.getElementById('payBtn').style.background = '#ddd';
     document.getElementById('payBtn').style.cursor = 'not-allowed';
-    document.getElementById('payBtn').textContent = '결제 수단을 선택해 주세요';
+    document.getElementById('payBtn').textContent = 'Please select a payment method';
     document.getElementById('bankForm').style.display = 'none';
     document.getElementById('cardForm').style.display = 'none';
     document.querySelectorAll('.pay-method').forEach(m => { m.style.borderColor='#eee'; m.style.background='#fff'; });
@@ -1123,10 +1123,10 @@
     const mainItems = mainCart || [];
     const allItems = [...selected, ...mainItems];
     document.getElementById('payOrderSummary').innerHTML = allItems.length
-      ? [...selected.map(m => `<div style="display:flex;justify-content:space-between;"><span>${m.icon} ${m.name}</span><span style="font-weight:500;">${m.aud ? 'A$'+m.price : m.price.toLocaleString()+'원'}</span></div>`),
+      ? [...selected.map(m => `<div style="display:flex;justify-content:space-between;"><span>${m.icon} ${m.name}</span><span style="font-weight:500;">${m.aud ? 'A$'+m.price : m.price.toLocaleString()}</span></div>`),
          ...mainItems.map(m => `<div style="display:flex;justify-content:space-between;"><span>🛍️ ${m.name}</span><span style="font-weight:500;">${m.price}</span></div>`)
         ].join('')
-      : '장바구니가 비어있습니다.';
+      : 'Your cart is empty.';
     document.getElementById('payTotal').textContent = allItems.length ? 'A$' + allItems.reduce((s,m) => {
       const p = m.aud ? m.price : (parseInt((m.price||'0').replace(/[^0-9]/g,''))/1300||0);
       return s + p;
@@ -1137,29 +1137,29 @@
     selectedPayMethod = method;
     document.querySelectorAll('.pay-method').forEach(m => { m.style.borderColor='#eee'; m.style.background='#fff'; });
     el.style.borderColor = '#FF4F4F'; el.style.background = '#FFF0F0';
-    document.getElementById('bankForm').style.display = method === '계좌이체' ? 'block' : 'none';
-    document.getElementById('cardForm').style.display = method === '신용카드' ? 'block' : 'none';
+    document.getElementById('bankForm').style.display = method === 'Bank Transfer' ? 'block' : 'none';
+    document.getElementById('cardForm').style.display = method === 'Credit Card' ? 'block' : 'none';
     const btn = document.getElementById('payBtn');
     btn.disabled = false; btn.style.background = '#FF4F4F'; btn.style.cursor = 'pointer';
-    btn.textContent = '💸 ' + method + '으로 지불하기';
+    btn.textContent = '💸 Pay via ' + method;
   }
 
   function processPayment() {
     if (!selectedPayMethod) return;
     closeModal('payModal');
     cart = {};
-    showToast('✅ 결제가 완료되었습니다!');
+    showToast('✅ Payment complete!');
     setTimeout(() => openTrackModal(), 800);
   }
 
-  /* ── 배달 추적 ── */
+  /* ── Delivery Tracking ── */
   let trackTimer = null;
   let trackStep = 0;
   const TRACK_STEPS = [
-    {status:'주문이 접수되었습니다',eta:'예상 도착 시간: 약 30분',icon:'📦',progress:'0%'},
-    {status:'가게에서 선물을 준비중입니다',eta:'예상 도착 시간: 약 22분',icon:'🏪',progress:'33%'},
-    {status:'라이더가 픽업했습니다! 배달중',eta:'예상 도착 시간: 약 12분',icon:'🛵',progress:'66%'},
-    {status:'도착했습니다! 선물을 받아주세요 🎁',eta:'배달 완료',icon:'🎉',progress:'100%'},
+    {status:'Order received!',eta:'Est. arrival: ~30 min',icon:'📦',progress:'0%'},
+    {status:'Store is preparing your gift',eta:'Est. arrival: ~22 min',icon:'🏪',progress:'33%'},
+    {status:'Rider picked up — on the way!',eta:'Est. arrival: ~12 min',icon:'🛵',progress:'66%'},
+    {status:'Delivered! Enjoy your gift 🎁',eta:'Delivered',icon:'🎉',progress:'100%'},
   ];
   const RIDER_POS = [
     {top:'30%',left:'20%'}, {top:'45%',left:'35%'}, {top:'55%',left:'55%'}, {top:'65%',left:'72%'}
@@ -1299,7 +1299,7 @@
     (!filtered.length ? '' : `<div onclick="selectAddr(document.getElementById('addrInput').value.trim())"
       style="padding:13px 16px;font-size:12px;color:#FF4F4F;border-top:1px solid #f0f0f0;cursor:pointer;display:flex;align-items:center;gap:8px;"
       onmouseenter="this.style.background='#FFF0F0'" onmouseleave="this.style.background=''">
-      📝 직접 입력: "${document.getElementById('addrInput').value.trim()}"
+      📝 Use: "${document.getElementById('addrInput').value.trim()}"
     </div>`);
   }
 
@@ -1334,14 +1334,14 @@
     const addrBadge = document.getElementById('gnbAddrBadge');
     if (addrBadge) addrBadge.textContent = '📍 ' + selectedAddr.split(' ').slice(0,3).join(' ');
     closeAddressModal();
-    showToast('✅ 주소가 저장되었습니다!');
+    showToast('✅ Address saved!');
   }
 
   function renderRecent() {
     const list = document.getElementById('recentList');
     recentAddresses = JSON.parse(localStorage.getItem('recentAddr') || '[]');
     if (!recentAddresses.length) {
-      list.innerHTML = '<div style="font-size:13px;color:#ccc;padding:8px 0;">최근 입력한 주소가 없습니다</div>';
+      list.innerHTML = '<div style="font-size:13px;color:#ccc;padding:8px 0;">No recent addresses</div>';
       return;
     }
     list.innerHTML = recentAddresses.map(addr => `
@@ -1353,15 +1353,15 @@
 
   function getGPS() {
     const result = document.getElementById('gpsResult');
-    result.textContent = '위치를 가져오는 중...';
-    if (!navigator.geolocation) { result.textContent = '이 브라우저는 위치 기능을 지원하지 않아요.'; return; }
+    result.textContent = 'Fetching location...';
+    if (!navigator.geolocation) { result.textContent = 'This browser does not support geolocation.'; return; }
     navigator.geolocation.getCurrentPosition(
       pos => {
-        const addr = `위도 ${pos.coords.latitude.toFixed(4)}, 경도 ${pos.coords.longitude.toFixed(4)} (GPS)`;
-        result.innerHTML = `<span style="color:#FF4F4F;font-weight:500;">📍 위치를 찾았어요!</span><br><span style="color:#555;">${addr}</span>`;
+        const addr = `Lat ${pos.coords.latitude.toFixed(4)}, Lng ${pos.coords.longitude.toFixed(4)} (GPS)`;
+        result.innerHTML = `<span style="color:#FF4F4F;font-weight:500;">📍 Location found!</span><br><span style="color:#555;">${addr}</span>`;
         setSelected(addr);
       },
-      () => { result.textContent = '위치 접근이 거부되었어요. 주소를 직접 입력해 주세요.'; }
+      () => { result.textContent = 'Location access denied. Please type your address.'; }
     );
   }
 
