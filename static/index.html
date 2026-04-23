@@ -658,8 +658,20 @@
       <button class="menu-cat" onclick="filterMenu(this,'케이크')" style="flex-shrink:0;padding:7px 16px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">🎂 케이크</button>
       <button class="menu-cat" onclick="filterMenu(this,'뷰티')" style="flex-shrink:0;padding:7px 16px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">💄 뷰티</button>
       <button class="menu-cat" onclick="filterMenu(this,'패션')" style="flex-shrink:0;padding:7px 16px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">👗 패션</button>
-      <button class="menu-cat" onclick="filterMenu(this,'음료')" style="flex-shrink:0;padding:7px 16px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">☕ 음료</button>
+      <button class="menu-cat" onclick="filterMenu(this,'소주')" style="flex-shrink:0;padding:7px 16px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">🍶 소주</button>
       <button class="menu-cat" onclick="filterMenu(this,'건강')" style="flex-shrink:0;padding:7px 16px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">💊 건강</button>
+    </div>
+    <!-- 소주 배지 선택 (소주 카테고리 선택시 표시) -->
+    <div id="sojuBadgeBar" style="display:none;padding:0 28px 12px;display:none;gap:8px;flex-wrap:wrap;">
+      <div style="font-size:12px;color:#888;font-weight:500;width:100%;margin-bottom:4px;">🍶 종류 선택</div>
+      <button class="soju-badge active-badge" onclick="selectSojuBadge(this,'전체')" style="padding:6px 14px;border-radius:20px;border:1.5px solid #FF4F4F;background:#FF4F4F;color:#fff;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">전체</button>
+      <button class="soju-badge" onclick="selectSojuBadge(this,'1박스')" style="padding:6px 14px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">📦 1박스</button>
+      <button class="soju-badge" onclick="selectSojuBadge(this,'6팩')" style="padding:6px 14px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">🧃 6팩</button>
+      <button class="soju-badge" onclick="selectSojuBadge(this,'1병')" style="padding:6px 14px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">🍾 1병</button>
+      <button class="soju-badge" onclick="selectSojuBadge(this,'Apple')" style="padding:6px 14px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">🍎 Apple</button>
+      <button class="soju-badge" onclick="selectSojuBadge(this,'Strawberry')" style="padding:6px 14px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">🍓 Strawberry</button>
+      <button class="soju-badge" onclick="selectSojuBadge(this,'Moscato')" style="padding:6px 14px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">🍇 Moscato</button>
+      <button class="soju-badge" onclick="selectSojuBadge(this,'Americano')" style="padding:6px 14px;border-radius:20px;border:1.5px solid #eee;background:#fff;color:#888;font-size:12px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">☕ Americano</button>
     </div>
     <!-- 상품 그리드 -->
     <div id="menuGrid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:0 28px 16px;"></div>
@@ -894,13 +906,18 @@
   const MENU_ITEMS = [
     {id:1,cat:'케이크',name:'파리바게뜨 카카오 케이크',price:22320,icon:'🎂',bg:'#FDEEF5'},
     {id:2,cat:'케이크',name:'배스킨라빈스 아이스크림 케이크',price:35900,icon:'🍦',bg:'#EEF5FF'},
-    {id:3,cat:'음료',name:'스타벅스 아메리카노 e쿠폰',price:4500,icon:'☕',bg:'#EDFBF4'},
-    {id:4,cat:'음료',name:'스타벅스 드링크 3잔 세트',price:16200,icon:'🧋',bg:'#FFF8EE'},
-    {id:5,cat:'뷰티',name:'설화수 윤조에센스 50ml',price:89000,icon:'🧴',bg:'#FAF5EC'},
-    {id:6,cat:'뷰티',name:'설화수 자음생 크림',price:150000,icon:'🌺',bg:'#FFF0F0'},
-    {id:7,cat:'패션',name:'오프아워 반팔 티셔츠',price:39900,icon:'👕',bg:'#EEF5FF'},
-    {id:8,cat:'패션',name:'오프아워 파자마 세트',price:41900,icon:'🧥',bg:'#F4EEFF'},
-    {id:9,cat:'건강',name:'종근당 비타민C 1000',price:18900,icon:'💊',bg:'#EDFBF4'},
+    {id:3,cat:'소주',sub:'1박스',name:'더 찾을수록 소주 1박스',price:180,icon:'📦',bg:'#F0F4FF',aud:true},
+    {id:4,cat:'소주',sub:'6팩',name:'더 찾을수록 소주 6팩',price:70,icon:'🧃',bg:'#F0FFF4',aud:true},
+    {id:5,cat:'소주',sub:'1병',name:'더 찾을수록 소주 1병',price:12,icon:'🍾',bg:'#FFF8F0',aud:true},
+    {id:6,cat:'소주',sub:'Apple',name:'더 찾을수록 Apple 소주 1병',price:12,icon:'🍎',bg:'#FFF0F0',aud:true},
+    {id:7,cat:'소주',sub:'Strawberry',name:'더 찾을수록 Strawberry 소주 1병',price:12,icon:'🍓',bg:'#FFF0F5',aud:true},
+    {id:8,cat:'소주',sub:'Moscato',name:'더 찾을수록 Moscato 소주 1병',price:12,icon:'🍇',bg:'#F5F0FF',aud:true},
+    {id:9,cat:'소주',sub:'Americano',name:'더 찾을수록 Americano 소주 1병',price:12,icon:'☕',bg:'#FFF8F0',aud:true},
+    {id:10,cat:'뷰티',name:'설화수 윤조에센스 50ml',price:89000,icon:'🧴',bg:'#FAF5EC'},
+    {id:11,cat:'뷰티',name:'설화수 자음생 크림',price:150000,icon:'🌺',bg:'#FFF0F0'},
+    {id:12,cat:'패션',name:'오프아워 반팔 티셔츠',price:39900,icon:'👕',bg:'#EEF5FF'},
+    {id:13,cat:'패션',name:'오프아워 파자마 세트',price:41900,icon:'🧥',bg:'#F4EEFF'},
+    {id:14,cat:'건강',name:'종근당 비타민C 1000',price:18900,icon:'💊',bg:'#EDFBF4'},
   ];
   let cart = {};
   let currentCat = '전체';
@@ -908,30 +925,44 @@
   function openMenuModal() {
     document.getElementById('menuModal').style.display = 'flex';
     document.body.style.overflow = 'hidden';
-    renderMenu('전체');
+    document.getElementById('sojuBadgeBar').style.display = 'none';
+    renderMenu('전체', '전체');
     updateCartBar();
   }
 
-  function renderMenu(cat) {
+  function renderMenu(cat, sub) {
     currentCat = cat;
-    const items = cat === '전체' ? MENU_ITEMS : MENU_ITEMS.filter(m => m.cat === cat);
+    let items = cat === '전체' ? MENU_ITEMS : MENU_ITEMS.filter(m => m.cat === cat);
+    if (cat === '소주' && sub && sub !== '전체') {
+      items = items.filter(m => m.sub === sub);
+    }
+    document.getElementById('sojuBadgeBar').style.display = cat === '소주' ? 'flex' : 'none';
     document.getElementById('menuGrid').innerHTML = items.map(m => `
       <div style="border:1.5px solid ${cart[m.id] ? '#FF4F4F' : '#eee'};border-radius:12px;overflow:hidden;cursor:pointer;transition:all 0.15s;background:#fff;" onclick="toggleCart(${m.id})" id="menuCard${m.id}">
         <div style="height:80px;background:${m.bg};display:flex;align-items:center;justify-content:center;font-size:36px;">${m.icon}</div>
         <div style="padding:10px;">
-          <div style="font-size:12px;color:#999;margin-bottom:3px;">${m.cat}</div>
+          <div style="font-size:12px;color:#999;margin-bottom:3px;">${m.cat}${m.sub ? ' · '+m.sub : ''}</div>
           <div style="font-size:12px;font-weight:500;color:#222;line-height:1.4;min-height:32px;">${m.name}</div>
           <div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px;">
-            <div style="font-size:13px;font-weight:700;color:#111;">${m.price.toLocaleString()}원</div>
+            <div style="font-size:13px;font-weight:700;color:#111;">${m.aud ? 'A$'+m.price : m.price.toLocaleString()+'원'}</div>
             <div style="width:22px;height:22px;border-radius:50%;background:${cart[m.id] ? '#FF4F4F' : '#eee'};display:flex;align-items:center;justify-content:center;font-size:14px;color:${cart[m.id] ? '#fff' : '#bbb'};font-weight:700;">${cart[m.id] ? '✓' : '+'}</div>
           </div>
         </div>
       </div>`).join('');
   }
 
+  function selectSojuBadge(btn, sub) {
+    document.querySelectorAll('.soju-badge').forEach(b => {
+      b.style.background='#fff'; b.style.color='#888'; b.style.borderColor='#eee';
+    });
+    btn.style.background='#FF4F4F'; btn.style.color='#fff'; btn.style.borderColor='#FF4F4F';
+    renderMenu('소주', sub);
+  }
+
   function toggleCart(id) {
     cart[id] = !cart[id];
-    renderMenu(currentCat);
+    const m = MENU_ITEMS.find(x => x.id === id);
+    renderMenu(currentCat, '전체');
     updateCartBar();
   }
 
@@ -948,7 +979,13 @@
       b.style.background='#fff'; b.style.color='#888'; b.style.borderColor='#eee';
     });
     btn.style.background='#FF4F4F'; btn.style.color='#fff'; btn.style.borderColor='#FF4F4F';
-    renderMenu(cat);
+    if (cat !== '소주') document.getElementById('sojuBadgeBar').style.display = 'none';
+    document.querySelectorAll('.soju-badge').forEach((b,i) => {
+      b.style.background = i===0 ? '#FF4F4F' : '#fff';
+      b.style.color = i===0 ? '#fff' : '#888';
+      b.style.borderColor = i===0 ? '#FF4F4F' : '#eee';
+    });
+    renderMenu(cat, '전체');
   }
 
   function goToPayment() {
