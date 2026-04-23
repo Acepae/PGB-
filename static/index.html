@@ -699,7 +699,7 @@
       <div id="payOrderSummary" style="font-size:14px;color:#333;line-height:1.8;">장바구니가 비어있습니다.</div>
       <div style="border-top:1px solid #eee;margin-top:10px;padding-top:10px;display:flex;justify-content:space-between;">
         <span style="font-size:13px;color:#888;">총 결제금액</span>
-        <span id="payTotal" style="font-size:16px;font-weight:700;color:#FF4F4F;">0원</span>
+        <span id="payTotal" style="font-size:16px;font-weight:700;color:#FF4F4F;">A$0.00</span>
       </div>
     </div>
 
@@ -721,7 +721,6 @@
 
       <!-- 계좌이체 입력 폼 -->
       <div id="bankForm" style="display:none;background:#f9f9f9;border-radius:12px;padding:16px;margin-bottom:12px;">
-        
         <!-- 내 은행 (보내는 사람) -->
         <div style="font-size:12px;color:#FF4F4F;font-weight:600;margin-bottom:8px;">💸 내 계좌 (보내는 사람)</div>
         <select style="width:100%;border:1.5px solid #eee;border-radius:8px;padding:10px;font-size:13px;font-family:'Noto Sans KR',sans-serif;margin-bottom:8px;outline:none;color:#333;background:#fff;">
@@ -733,8 +732,8 @@
           <option>Commonwealth Bank</option>
           <option>ING Bank</option>
         </select>
-        <input type="text" placeholder="내 BSB 번호 (예: 062-000)" style="width:100%;border:1.5px solid #eee;border-radius:8px;padding:10px;font-size:13px;font-family:'Noto Sans KR',sans-serif;outline:none;color:#333;margin-bottom:8px;">
-        <input type="text" placeholder="내 계좌번호 (My Account Number)" style="width:100%;border:1.5px solid #eee;border-radius:8px;padding:10px;font-size:13px;font-family:'Noto Sans KR',sans-serif;outline:none;color:#333;margin-bottom:16px;">
+        <input type="text" placeholder="BSB" style="width:100%;border:1.5px solid #eee;border-radius:8px;padding:10px;font-size:13px;font-family:'Noto Sans KR',sans-serif;outline:none;color:#333;margin-bottom:8px;">
+        <input type="text" placeholder="A/N" style="width:100%;border:1.5px solid #eee;border-radius:8px;padding:10px;font-size:13px;font-family:'Noto Sans KR',sans-serif;outline:none;color:#333;margin-bottom:16px;">
 
         <!-- 받는 사람 계좌 - 고정 (수정 불가) -->
         <div style="font-size:12px;color:#3A7BD5;font-weight:600;margin-bottom:8px;">📥 받는 사람 계좌 (Recipient) — 고정</div>
@@ -752,7 +751,7 @@
             <span style="font-size:13px;font-weight:700;color:#111;">736-081</span>
           </div>
           <div style="display:flex;justify-content:space-between;align-items:center;">
-            <span style="font-size:12px;color:#3A7BD5;font-weight:500;">계좌번호 (Account No)</span>
+            <span style="font-size:12px;color:#3A7BD5;font-weight:500;">A/N</span>
             <span style="font-size:13px;font-weight:700;color:#111;">540229</span>
           </div>
           <div style="margin-top:10px;padding-top:10px;border-top:1px solid #B5D4F4;font-size:11px;color:#888;text-align:center;">🔒 수정할 수 없는 고정 계좌입니다</div>
@@ -768,10 +767,9 @@
           <input type="text" placeholder="CVC" style="border:1.5px solid #eee;border-radius:8px;padding:10px;font-size:13px;font-family:'Noto Sans KR',sans-serif;outline:none;color:#333;">
         </div>
       </div>
-    </div>
 
-    <div style="padding:8px 28px 28px;">
-      <button id="payBtn" onclick="processPayment()" disabled style="width:100%;background:#ddd;color:#fff;border:none;border-radius:12px;padding:15px;font-size:15px;font-weight:700;cursor:not-allowed;font-family:'Noto Sans KR',sans-serif;transition:background 0.2s;">결제 수단을 선택해 주세요</button>
+      <!-- 지불하기 버튼 -->
+      <button id="payBtn" onclick="processPayment()" disabled style="width:100%;background:#ddd;color:#fff;border:none;border-radius:12px;padding:15px;font-size:15px;font-weight:700;cursor:not-allowed;font-family:'Noto Sans KR',sans-serif;transition:background 0.2s;margin-bottom:20px;">결제 수단을 선택해 주세요</button>
     </div>
   </div>
 </div>
@@ -1122,11 +1120,17 @@
 
   function updatePaySummary() {
     const selected = MENU_ITEMS.filter(m => cart[m.id]);
-    const total = selected.reduce((s,m) => s+m.price, 0);
-    document.getElementById('payOrderSummary').innerHTML = selected.length
-      ? selected.map(m => `<div style="display:flex;justify-content:space-between;"><span>${m.icon} ${m.name}</span><span style="font-weight:500;">${m.price.toLocaleString()}원</span></div>`).join('')
+    const mainItems = mainCart || [];
+    const allItems = [...selected, ...mainItems];
+    document.getElementById('payOrderSummary').innerHTML = allItems.length
+      ? [...selected.map(m => `<div style="display:flex;justify-content:space-between;"><span>${m.icon} ${m.name}</span><span style="font-weight:500;">${m.aud ? 'A$'+m.price : m.price.toLocaleString()+'원'}</span></div>`),
+         ...mainItems.map(m => `<div style="display:flex;justify-content:space-between;"><span>🛍️ ${m.name}</span><span style="font-weight:500;">${m.price}</span></div>`)
+        ].join('')
       : '장바구니가 비어있습니다.';
-    document.getElementById('payTotal').textContent = total.toLocaleString() + '원';
+    document.getElementById('payTotal').textContent = allItems.length ? 'A$' + allItems.reduce((s,m) => {
+      const p = m.aud ? m.price : (parseInt((m.price||'0').replace(/[^0-9]/g,''))/1300||0);
+      return s + p;
+    }, 0).toFixed(2) : 'A$0.00';
   }
 
   function selectPay(el, method) {
