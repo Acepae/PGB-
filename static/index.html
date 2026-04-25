@@ -686,12 +686,13 @@
 
 <!-- ── Easy Payment 모달 ── -->
 <div id="payModal" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.5);align-items:center;justify-content:center;">
-  <div style="background:#fff;border-radius:20px;width:100%;max-width:480px;margin:0 16px;animation:modalIn 0.25s ease;">
-    <div style="padding:24px 28px 0;display:flex;justify-content:space-between;align-items:center;">
+  <div style="background:#fff;border-radius:20px;width:100%;max-width:480px;margin:0 16px;display:flex;flex-direction:column;max-height:85vh;">
+    <div style="padding:24px 28px 0;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;">
       <div style="font-size:18px;font-weight:700;color:#111;">💳 Easy Payment</div>
       <button onclick="closeModal('payModal')" style="border:none;background:none;font-size:22px;color:#bbb;cursor:pointer;">✕</button>
     </div>
-    <div style="padding:8px 28px 0;font-size:13px;color:#aaa;">Select payment method</div>
+    <div style="padding:4px 28px 8px;font-size:13px;color:#aaa;flex-shrink:0;">Select payment method</div>
+    <div style="overflow-y:auto;flex:1;">
 
     <!-- 주문 요약 -->
     <div style="margin:16px 28px;background:#f9f9f9;border-radius:12px;padding:16px;">
@@ -776,6 +777,14 @@
 
       <!-- 지불하기 버튼 -->
       <button id="payBtn" onclick="processPayment()" disabled style="width:100%;background:#ddd;color:#fff;border:none;border-radius:12px;padding:15px;font-size:15px;font-weight:700;cursor:not-allowed;font-family:'Noto Sans KR',sans-serif;transition:background 0.2s;margin-bottom:20px;">Please select a payment method</button>
+    </div>
+    </div><!-- 스크롤 닫기 -->
+    <!-- 하단 고정 Pay 버튼 -->
+    <div style="padding:16px 28px 24px;border-top:1px solid #eee;flex-shrink:0;">
+      <button id="payBtnFixed" onclick="processPayment()" disabled
+        style="width:100%;background:#ddd;color:#fff;border:none;border-radius:12px;padding:16px;font-size:15px;font-weight:700;cursor:not-allowed;font-family:'Noto Sans KR',sans-serif;transition:background 0.2s;">
+        Please select a payment method
+      </button>
     </div>
   </div>
 </div>
@@ -1152,6 +1161,9 @@
     const btn = document.getElementById('payBtn');
     btn.disabled = false; btn.style.background = '#FF4F4F'; btn.style.cursor = 'pointer';
     btn.textContent = '💸 Pay via ' + method;
+    const btnFixed = document.getElementById('payBtnFixed');
+    btnFixed.disabled = false; btnFixed.style.background = '#FF4F4F'; btnFixed.style.cursor = 'pointer';
+    btnFixed.textContent = '💸 Pay via ' + method;
   }
 
   function processPayment() {
