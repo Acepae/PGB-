@@ -697,9 +697,15 @@
     <div style="margin:16px 28px;background:#f9f9f9;border-radius:12px;padding:16px;">
       <div style="font-size:12px;color:#aaa;margin-bottom:8px;font-weight:500;">Order Summary</div>
       <div id="payOrderSummary" style="font-size:14px;color:#333;line-height:1.8;">Your cart is empty.</div>
-      <div style="border-top:1px solid #eee;margin-top:10px;padding-top:10px;display:flex;justify-content:space-between;">
-        <span style="font-size:13px;color:#888;">Total</span>
-        <span id="payTotal" style="font-size:16px;font-weight:700;color:#FF4F4F;">A$0.00</span>
+      <div style="border-top:1px solid #eee;margin-top:10px;padding-top:10px;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:5px;">
+          <span style="font-size:12px;color:#aaa;">GST included (10%)</span>
+          <span id="payGST" style="font-size:12px;color:#aaa;">A$0.00</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;">
+          <span style="font-size:13px;font-weight:700;color:#111;">Total</span>
+          <span id="payTotal" style="font-size:16px;font-weight:700;color:#FF4F4F;">A$0.00</span>
+        </div>
       </div>
     </div>
 
@@ -1127,10 +1133,14 @@
          ...mainItems.map(m => `<div style="display:flex;justify-content:space-between;"><span>🛍️ ${m.name}</span><span style="font-weight:500;">${m.price}</span></div>`)
         ].join('')
       : 'Your cart is empty.';
-    document.getElementById('payTotal').textContent = allItems.length ? 'A$' + allItems.reduce((s,m) => {
-      const p = m.aud ? m.price : (parseInt((m.price||'0').replace(/[^0-9]/g,''))/1300||0);
-      return s + p;
-    }, 0).toFixed(2) : 'A$0.00';
+    const total = allItems.length ? allItems.reduce((s,m) => {
+      const p = m.aud ? Number(m.price) : (parseFloat((m.price||'0').replace(/[^0-9.]/g,''))||0);
+      return s + p * (m.qty || 1);
+    }, 0) : 0;
+    const gst = total / 11;
+    document.getElementById('payTotal').textContent = 'A$' + total.toFixed(2);
+    if (document.getElementById('payGST'))
+      document.getElementById('payGST').textContent = 'A$' + gst.toFixed(2);
   }
 
   function selectPay(el, method) {
