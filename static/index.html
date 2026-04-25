@@ -684,22 +684,36 @@
   </div>
 </div>
 
-<!-- ── Easy Payment 모달 ── -->
+<!-- PAYMENT MODAL -->
 <div id="payModal" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.5);align-items:center;justify-content:center;">
-  <div style="background:#fff;border-radius:20px;width:100%;max-width:480px;margin:0 16px;animation:modalIn 0.25s ease;">
-    <div style="padding:24px 28px 0;display:flex;justify-content:space-between;align-items:center;">
-      <div style="font-size:18px;font-weight:700;color:#111;">💳 Easy Payment</div>
+  <div style="background:#fff;border-radius:20px;width:100%;max-width:480px;margin:0 16px;display:flex;flex-direction:column;max-height:90vh;">
+    <!-- 헤더 고정 -->
+    <div style="padding:24px 28px 0;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;">
+      <div style="font-size:18px;font-weight:700;color:#111;">💳 Payment</div>
       <button onclick="closeModal('payModal')" style="border:none;background:none;font-size:22px;color:#bbb;cursor:pointer;">✕</button>
     </div>
-    <div style="padding:8px 28px 0;font-size:13px;color:#aaa;">Select payment method</div>
+    <div style="padding:4px 28px 8px;font-size:13px;color:#aaa;flex-shrink:0;">Select payment method</div>
 
-    <!-- 주문 요약 -->
+    <!-- 스크롤 영역 -->
+    <div style="overflow-y:auto;flex:1;padding-bottom:8px;">
+
+    <!-- Order Summary -->
     <div style="margin:16px 28px;background:#f9f9f9;border-radius:12px;padding:16px;">
       <div style="font-size:12px;color:#aaa;margin-bottom:8px;font-weight:500;">Order Summary</div>
       <div id="payOrderSummary" style="font-size:14px;color:#333;line-height:1.8;">Your cart is empty.</div>
-      <div style="border-top:1px solid #eee;margin-top:10px;padding-top:10px;display:flex;justify-content:space-between;">
-        <span style="font-size:13px;color:#888;">Total</span>
-        <span id="payTotal" style="font-size:16px;font-weight:700;color:#FF4F4F;">A$0.00</span>
+      <div style="border-top:1px solid #eee;margin-top:10px;padding-top:10px;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+          <span style="font-size:13px;color:#888;">Subtotal (inc. GST)</span>
+          <span id="paySubtotal" style="font-size:13px;color:#555;">A$0.00</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+          <span style="font-size:12px;color:#aaa;">GST included (10%)</span>
+          <span id="payGST" style="font-size:12px;color:#aaa;">A$0.00</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding-top:8px;border-top:1px dashed #eee;">
+          <span style="font-size:14px;font-weight:700;color:#111;">Total</span>
+          <span id="payTotal" style="font-size:16px;font-weight:700;color:#FF4F4F;">A$0.00</span>
+        </div>
       </div>
     </div>
 
@@ -767,9 +781,14 @@
           <input type="text" placeholder="CVC" style="border:1.5px solid #eee;border-radius:8px;padding:10px;font-size:13px;font-family:'Noto Sans KR',sans-serif;outline:none;color:#333;">
         </div>
       </div>
+    </div>
 
-      <!-- 지불하기 버튼 -->
-      <button id="payBtn" onclick="processPayment()" disabled style="width:100%;background:#ddd;color:#fff;border:none;border-radius:12px;padding:15px;font-size:15px;font-weight:700;cursor:not-allowed;font-family:'Noto Sans KR',sans-serif;transition:background 0.2s;margin-bottom:20px;">Please select a payment method</button>
+    <!-- 하단 고정 Pay 버튼 -->
+    <div style="padding:12px 28px 24px;border-top:1px solid #eee;background:#fff;border-radius:0 0 20px 20px;flex-shrink:0;">
+      <button id="payBtn" onclick="processPayment()" disabled
+        style="width:100%;background:#ddd;color:#fff;border:none;border-radius:12px;padding:16px;font-size:15px;font-weight:700;cursor:not-allowed;font-family:'Noto Sans KR',sans-serif;transition:background 0.2s;">
+        Please select a payment method
+      </button>
     </div>
   </div>
 </div>
@@ -1123,14 +1142,28 @@
     const mainItems = mainCart || [];
     const allItems = [...selected, ...mainItems];
     document.getElementById('payOrderSummary').innerHTML = allItems.length
-      ? [...selected.map(m => `<div style="display:flex;justify-content:space-between;"><span>${m.icon} ${m.name}</span><span style="font-weight:500;">${m.aud ? 'A$'+m.price : m.price.toLocaleString()}</span></div>`),
-         ...mainItems.map(m => `<div style="display:flex;justify-content:space-between;"><span>🛍️ ${m.name}</span><span style="font-weight:500;">${m.price}</span></div>`)
+      ? [...selected.map(m => `<div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span>${m.icon} ${m.name}</span><span style="font-weight:500;">${m.aud ? 'A$'+m.price : 'A$'+m.price}</span></div>`),
+         ...mainItems.map(m => `<div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span>🛍️ ${m.name}</span><span style="font-weight:500;">${m.price}</span></div>`)
         ].join('')
       : 'Your cart is empty.';
-    document.getElementById('payTotal').textContent = allItems.length ? 'A$' + allItems.reduce((s,m) => {
-      const p = m.aud ? m.price : (parseInt((m.price||'0').replace(/[^0-9]/g,''))/1300||0);
-      return s + p;
-    }, 0).toFixed(2) : 'A$0.00';
+
+    // Calculate totals with GST
+    const total = allItems.reduce((s, m) => {
+      const p = m.aud ? Number(m.price) : (parseFloat((m.price||'0').replace(/[^0-9.]/g,''))||0);
+      return s + p * (m.qty || 1);
+    }, 0) + mainItems.reduce((s, m) => {
+      const p = parseFloat((m.price||'0').replace(/[^0-9.]/g,''))||0;
+      return s + p * (m.qty || 1);
+    }, 0);
+
+    const gst = total / 11; // GST is 1/11 of total (included in price)
+    const subtotal = total;
+
+    if (document.getElementById('paySubtotal'))
+      document.getElementById('paySubtotal').textContent = 'A$' + subtotal.toFixed(2);
+    if (document.getElementById('payGST'))
+      document.getElementById('payGST').textContent = 'A$' + gst.toFixed(2);
+    document.getElementById('payTotal').textContent = 'A$' + subtotal.toFixed(2);
   }
 
   function selectPay(el, method) {
