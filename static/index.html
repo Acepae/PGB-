@@ -1195,7 +1195,7 @@
     const waUrl = `https://wa.me/61430288211?text=${waMsg}`;
 
     // 배송 주소
-    const deliveryAddr = selectedAddr || 'Address not provided';
+    const deliveryAddr = confirmedAddr || 'Address not provided';
 
     document.getElementById('orderModal').innerHTML = `
       <div style="background:#fff;border-radius:20px;width:100%;max-width:480px;margin:0 16px;animation:modalIn 0.25s ease;overflow:hidden;">
@@ -1349,7 +1349,7 @@
     document.body.style.overflow = '';
     document.getElementById('addrResults').style.display = 'none';
     document.getElementById('addrInput').value = '';
-    setSelected('');
+    // selectedAddr는 초기화하지 않음 — 결제 시 사용
   }
   document.getElementById('addressModal').addEventListener('click', function(e) {
     if (e.target === this) closeAddressModal();
@@ -1438,8 +1438,11 @@
     }
   }
 
+  let confirmedAddr = '';
+
   function confirmAddress() {
     if (!selectedAddr) return;
+    confirmedAddr = selectedAddr;
     recentAddresses = [selectedAddr, ...recentAddresses.filter(a => a !== selectedAddr)].slice(0, 5);
     localStorage.setItem('recentAddr', JSON.stringify(recentAddresses));
     const addrBadge = document.getElementById('gnbAddrBadge');
