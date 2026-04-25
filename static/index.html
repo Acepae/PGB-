@@ -947,6 +947,7 @@
 <script>
   /* ── 메인 장바구니 시스템 ── */
   let mainCart = [];
+  let selectedAddr = '';
 
   function addToMainCart(btn, name, price) {
     const existing = mainCart.find(i => i.name === name);
@@ -1335,7 +1336,6 @@
     '42 Armadale Rd, Jandakot WA 6164',
   ];
 
-  let selectedAddr = '';
   let recentAddresses = JSON.parse(localStorage.getItem('recentAddr') || '[]');
 
   function openAddressModal() {
