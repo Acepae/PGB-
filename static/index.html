@@ -775,13 +775,11 @@
         </div>
       </div>
 
-      <!-- 지불하기 버튼 -->
-      <button id="payBtn" onclick="processPayment()" disabled style="width:100%;background:#ddd;color:#fff;border:none;border-radius:12px;padding:15px;font-size:15px;font-weight:700;cursor:not-allowed;font-family:'Noto Sans KR',sans-serif;transition:background 0.2s;margin-bottom:20px;">Please select a payment method</button>
     </div>
     </div><!-- 스크롤 닫기 -->
     <!-- 하단 고정 Pay 버튼 -->
     <div style="padding:16px 28px 24px;border-top:1px solid #eee;flex-shrink:0;">
-      <button id="payBtnFixed" onclick="processPayment()" disabled
+      <button id="payBtn" onclick="processPayment()" disabled
         style="width:100%;background:#ddd;color:#fff;border:none;border-radius:12px;padding:16px;font-size:15px;font-weight:700;cursor:not-allowed;font-family:'Noto Sans KR',sans-serif;transition:background 0.2s;">
         Please select a payment method
       </button>
@@ -1161,9 +1159,6 @@
     const btn = document.getElementById('payBtn');
     btn.disabled = false; btn.style.background = '#FF4F4F'; btn.style.cursor = 'pointer';
     btn.textContent = '💸 Pay via ' + method;
-    const btnFixed = document.getElementById('payBtnFixed');
-    btnFixed.disabled = false; btnFixed.style.background = '#FF4F4F'; btnFixed.style.cursor = 'pointer';
-    btnFixed.textContent = '💸 Pay via ' + method;
   }
 
   function processPayment() {
